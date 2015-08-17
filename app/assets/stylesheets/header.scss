@@ -6,9 +6,13 @@
   height: 18px;
 }
 
+.inuse {
+  color: red;
+  font-weight: bold;
+}
 
 .subreddit-list {
-  font-size: 9px;
+  font-size: 12px;
   display: inline-block;
   width: 95%;
   white-space: nowrap;

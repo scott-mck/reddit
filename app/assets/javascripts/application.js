@@ -33,6 +33,10 @@ $(document).ready(function() {
   });
 
   $('.subreddit-index-item').click(function(event) {
-    window.location.href = '/r/' + event.currentTarget.textContent.toLowerCase();
+    if (event.currentTarget.textContent == 'FRONT') {
+      window.location.href = '/';
+    } else {
+      window.location.href = '/r/' + event.currentTarget.textContent.trim().toLowerCase();
+    }
   });
 });
