@@ -25,6 +25,10 @@
 
 $(document).ready(function() {
   $('.my-subreddits').click(function() {
-    
+    if ($('.my-subreddits-dropdown').hasClass('hide')) {
+      $('.my-subreddits-dropdown').removeClass('hide');
+    } else {
+      $('.my-subreddits-dropdown').addClass('hide');
+    }
   });
 });

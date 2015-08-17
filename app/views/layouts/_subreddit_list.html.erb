@@ -1,5 +1,5 @@
 <div class="subreddit-list">
-  <span class="subreddit-index-item">
+  <span class="my-subreddits subreddit-index-item">
     MY SUBREDDITS ▼
   </span>
 
@@ -19,3 +19,9 @@
   <% end %>
 </div>
 <span class="subreddit-index-item more">MORE >></span>
+
+<div class="my-subreddits-dropdown hide">
+  <% subreddit_list.each do |sub| %>
+    <div class="subreddit-index-item"><%= sub.name.upcase %></div>
+  <% end %>
+</div>
