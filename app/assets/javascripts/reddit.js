@@ -18,5 +18,5 @@ window.Reddit = {
 };
 
 $(document).ready(function(){
-  Reddit.initialize();
+  // Reddit.initialize();
 });

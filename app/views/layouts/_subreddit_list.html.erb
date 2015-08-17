@@ -1,0 +1,21 @@
+<div class="subreddit-list">
+  <span class="subreddit-index-item">
+    MY SUBREDDITS ▼
+  </span>
+
+  <span class="subreddit-index-item">FRONT</span>
+  <span class="subreddit-index-item">-</span>
+  <span class="subreddit-index-item">ALL</span>
+  <span class="subreddit-index-item">-</span>
+  <span class="subreddit-index-item">RANDOM</span>
+  <span class="subreddit-index-item">|</span>
+
+  <% subreddit_list.each_with_index do |sub, i| %>
+    <span class="subreddit-index-item"><%= sub.name.upcase %></span>
+
+    <% unless i == subreddit_list.length - 1 %>
+      <span class="subreddit-index-item">-</span>
+    <% end %>
+  <% end %>
+</div>
+<span class="subreddit-index-item more">MORE >></span>

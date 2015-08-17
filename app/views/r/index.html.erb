@@ -1,0 +1,10 @@
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="posts-index-item">
+      <img src="<%= post.picture_url %>">
+      <a href="<%= post.link_url%> ">
+        <%= post.title %>
+      </a>
+    </div>
+  <% end %>
+</div>
