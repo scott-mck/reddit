@@ -9,7 +9,11 @@
   height: auto;
 }
 
-.posts a {
-  text-decoration: none;
+.posts .link {
+  color: blue;
   font-size: 17px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

@@ -31,4 +31,8 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').addClass('hide');
     }
   });
+
+  $('.subreddit-index-item').click(function(event) {
+    window.location.href = '/r/' + event.currentTarget.textContent.toLowerCase();
+  });
 });

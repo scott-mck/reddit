@@ -2,9 +2,7 @@
   <% @posts.each do |post| %>
     <div class="posts-index-item">
       <img src="<%= post.picture_url %>">
-      <a href="<%= post.link_url%> ">
-        <%= post.title %>
-      </a>
+      <div class="link"><%= post.title %></div>
     </div>
   <% end %>
 </div>
