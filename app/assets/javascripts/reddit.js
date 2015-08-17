@@ -8,6 +8,11 @@ window.Reddit = {
       $rootEl: $('#main')
     });
 
+    var header = new Reddit.Views.Header({
+      router: router
+    });
+    $('#header').html(header.render().$el);
+
     Backbone.history.start();
   }
 };
