@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RedditControllerTest < ActionController::TestCase
+class Api::PostsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

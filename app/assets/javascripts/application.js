@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require composite_view
 //= require reddit
 //= require_tree ../templates
 //= require_tree ./models

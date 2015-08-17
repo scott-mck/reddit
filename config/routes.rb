@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  root 'reddit#index'
+  root 'static_pages#root'
+
+  namespace 'api', defaults: { format: :json } do
+    resources :posts
+  end
 end

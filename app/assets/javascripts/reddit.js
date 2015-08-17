@@ -4,7 +4,11 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var router = new Reddit.Routers.Router({
+      $rootEl: $('#main')
+    });
+
+    Backbone.history.start();
   }
 };
 
