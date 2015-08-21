@@ -101,17 +101,22 @@
 
   .tab {
     float: left;
+    height: 18px;
     margin-right: 6px;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 6px;
+    padding-left: 6px;
     background-color: #eff7ff;
     color: #369;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
     list-style-type: none;
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .selected {
+    color: red;
   }
 }
