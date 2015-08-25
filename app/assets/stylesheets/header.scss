@@ -48,12 +48,13 @@
 }
 
 .my-subreddits-dropdown {
+  display: none;
   position: absolute;
+  z-index: 50;
   left: 5px;
   top: 20px;
   margin-top: -2px;
   min-width: 80px;
-  display: inline-block;
   background-color: white;
   border-left: 1px solid #808080;
   border-right: 1px solid #808080;
@@ -72,10 +73,6 @@
       text-decoration: none;
     }
   }
-}
-
-.hide {
-  display: none;
 }
 
 #header-main {
@@ -122,6 +119,12 @@
   }
 
   .selected {
-    color: red;
+    background-color: white !important;
+    border: 1px solid #5f99cf;
+    border-bottom: none;
+
+    a {
+      color: red !important;
+    }
   }
 }

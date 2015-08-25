@@ -1,5 +1,6 @@
 %w(gadgets sports gaming pics worldnews videos askreddit aww music funny news
-   movies books history food philosophy television jokes art diy space stupid what)
+   movies books history internetisbeautiful food philosophy television jokes art
+   diy space stupid what)
 .each do |sub|
   Subreddit.create(name: sub)
 end

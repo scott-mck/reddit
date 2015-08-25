@@ -23,16 +23,33 @@
 //= require_tree ./routers
 //= require_tree .
 
+function hideDropdown() {
+  $('.my-subreddits-dropdown').hide();
+};
+
+function showDropdown() {
+  $('.my-subreddits-dropdown').show();
+};
+
 $(document).ready(function() {
-  $('.my-subreddits').click(function() {
-    if ($('.my-subreddits-dropdown').hasClass('hide')) {
-      $('.my-subreddits-dropdown').removeClass('hide');
-    } else {
-      $('.my-subreddits-dropdown').addClass('hide');
+  $(document).mouseup(function (event) {
+    var container = $('.my-subreddits-dropdown');
+
+    if (!container.is(event.target) // if the target of the click isn't the container...
+        && container.has(event.target).length === 0) { // ... nor a descendant of the container
+          container.hide();
     }
   });
 
-  $('.subreddit-index-item').click(function(event) {
+  $('.my-subreddits').click(function (event) {
+    if ($('.my-subreddits-dropdown').css('display') === 'none') {
+      showDropdown();
+    } else {
+      hideDropdown();
+    }
+  });
+
+  $('.subreddit-index-item').click(function (event) {
     if (event.currentTarget.textContent == 'FRONT') {
       window.location.href = '/';
     } else {
