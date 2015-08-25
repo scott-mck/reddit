@@ -1,6 +1,13 @@
 <img src="https://www.redditstatic.com/about/assets/reddit-logo.png">
 <ul class="tabs">
   <% %w(hot new rising controversial top gilded wiki promoted).each do |tab| %>
+    <% if params[:sort].nil? && tab == 'hot' %>
+      <li class="tab selected">
+        <a href="/r/<%= params[:subreddit] %>/hot">hot</a>
+      </li>
+      <% next %>
+    <% end %>
+
     <li class="tab <%= 'selected' if params[:sort] == tab %>">
       <a href="/r/<%= params[:subreddit] %>/<%= tab %>"><%= tab %></a>
     </li>
