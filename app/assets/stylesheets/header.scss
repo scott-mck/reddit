@@ -99,12 +99,12 @@
     margin: 0px;
     padding: 0px;
     left: 135px;
-    bottom: 0px;
+    bottom: -1px;
   }
 
   li.tab {
     float: left;
-    height: 18px;
+    height: 19px;
     margin-right: 6px;
     padding-right: 6px;
     padding-left: 6px;
@@ -113,6 +113,7 @@
     font-weight: bold;
     font-size: 14px;
     list-style-type: none;
+    border-bottom: 1px solid #5f99cf;
 
     a {
       text-decoration: none;
@@ -124,13 +125,17 @@
     }
   }
 
-  .selected {
-    background-color: white !important;
+  li.tab.selected {
+    background-color: white;
     border: 1px solid #5f99cf;
-    border-bottom: none;
+    border-bottom: 1px solid white;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     a {
-      color: red !important;
+      color: red;
     }
   }
 }
