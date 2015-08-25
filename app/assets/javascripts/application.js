@@ -23,14 +23,6 @@
 //= require_tree ./routers
 //= require_tree .
 
-function hideDropdown() {
-  $('.my-subreddits-dropdown').hide();
-};
-
-function showDropdown() {
-  $('.my-subreddits-dropdown').show();
-};
-
 $(document).ready(function() {
   $(document).mouseup(function (event) {
     var container = $('.my-subreddits-dropdown');
@@ -43,14 +35,9 @@ $(document).ready(function() {
 
   $('.my-subreddits').click(function (event) {
     if ($('.my-subreddits-dropdown').css('display') === 'none') {
-      showDropdown();
+      $('.my-subreddits-dropdown').hide();
     } else {
-      hideDropdown();
+      $('.my-subreddits-dropdown').show();
     }
-  });
-
-  $('.tab').click(function (event) {
-    // var path = window.location.pathname;
-    // alert(path.slice(path.substr('/'), path.length))
   });
 });
