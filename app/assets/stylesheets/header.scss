@@ -5,11 +5,6 @@
   height: 18px;
 }
 
-.inuse {
-  color: red;
-  font-weight: bold;
-}
-
 .subreddit-list {
   font-size: 12px;
   display: inline-block;
@@ -23,9 +18,20 @@
   padding-left: 1px;
   padding-right: 1px;
 
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  a {
+    color: black;
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+
+  .inuse {
+    color: red;
+    font-weight: bold;
+    &:hover {
+      color: red;
+    }
   }
 }
 
@@ -61,10 +67,6 @@
   border-bottom: 1px solid #808080;
   color: #369;
 
-  &:hover {
-    cursor: pointer;
-  }
-
   .subreddit-index-item {
     padding: 3px;
 
@@ -72,6 +74,10 @@
       background-color: #c7def7;
       text-decoration: none;
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
 

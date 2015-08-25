@@ -35,9 +35,9 @@ $(document).ready(function() {
   $(document).mouseup(function (event) {
     var container = $('.my-subreddits-dropdown');
 
-    if (!container.is(event.target) // if the target of the click isn't the container...
-        && container.has(event.target).length === 0) { // ... nor a descendant of the container
-          container.hide();
+    if (!container.is(event.target) &&
+          container.has(event.target).length === 0) {
+      container.hide();
     }
   });
 
@@ -46,15 +46,6 @@ $(document).ready(function() {
       showDropdown();
     } else {
       hideDropdown();
-    }
-  });
-
-  $('.subreddit-index-item').click(function (event) {
-    if (event.currentTarget.textContent == 'FRONT') {
-      window.location.href = '/';
-    } else {
-      window.location.href = '/r/' +
-        event.currentTarget.textContent.trim().toLowerCase();
     }
   });
 

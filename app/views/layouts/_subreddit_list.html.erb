@@ -3,25 +3,27 @@
     MY SUBREDDITS ▼
   </span>
 
-  <span class="subreddit-index-item
-        <%= 'inuse' if request.env['PATH_INFO'].split('/').include?('front') ||
-        request.env['PATH_INFO'].split('/').length == 0 %>">
-      FRONT</span> -
+  <span class="subreddit-index-item">
+    <a class="<%= 'inuse' if params[:subreddit] == 'front' %>"
+       href="front">FRONT</a>
+  </span> -
 
-  <span class="subreddit-index-item
-        <%= 'inuse' if request.env['PATH_INFO'].split('/').include? 'all' %>">
-      ALL</span> -
+  <span class="subreddit-index-item">
+    <a class="<%= 'inuse' if params[:subreddit] == 'all' %>"
+       href="all">ALL</a>
+  </span> -
 
-  <span class="subreddit-index-item
-        <%= 'inuse' if request.env['PATH_INFO'].split('/').include? 'random' %>">
-      RANDOM</span>
+  <span class="subreddit-index-item">
+    <a class="<%= 'inuse' if params[:subreddit] == 'random' %>"
+       href="random">RANDOM</a>
+  </span>
 
   <span style="margin-left: 5px; margin-right: 5px;">|</span>
 
   <% subreddit_list.each_with_index do |sub, i| %>
-    <span class="subreddit-index-item
-          <%= 'inuse' if request.env['PATH_INFO'].split('/').include? sub.name %>">
-        <%= sub.name.upcase %>
+    <span class="subreddit-index-item">
+      <a class="<%= 'inuse' if params[:subreddit] == sub.name %>"
+         href="<%= sub.name %>"><%= sub.name.upcase %></a>
     </span>
 
     <% unless i == subreddit_list.length - 1 %>
