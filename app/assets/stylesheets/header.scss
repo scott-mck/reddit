@@ -80,10 +80,10 @@
 
 #header-main {
   position: relative;
-  height: 45px;
+  height: 47px;
   background: #cee3f8;
   border-bottom: 1px solid #5f99cf;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   img {
     margin: 2px;
@@ -91,7 +91,7 @@
     height: 40px;
   }
 
-  .tabs {
+  ul.tabs {
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -99,7 +99,7 @@
     bottom: 0px;
   }
 
-  .tab {
+  li.tab {
     float: left;
     height: 18px;
     margin-right: 6px;
@@ -111,7 +111,12 @@
     font-size: 14px;
     list-style-type: none;
 
-    &:hover {
+    a {
+      text-decoration: none;
+      color: #369;
+    }
+
+    a:hover {
       cursor: pointer;
     }
   }

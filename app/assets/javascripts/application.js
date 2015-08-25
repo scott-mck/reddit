@@ -36,7 +36,13 @@ $(document).ready(function() {
     if (event.currentTarget.textContent == 'FRONT') {
       window.location.href = '/';
     } else {
-      window.location.href = '/r/' + event.currentTarget.textContent.trim().toLowerCase();
+      window.location.href = '/r/' +
+        event.currentTarget.textContent.trim().toLowerCase();
     }
+  });
+
+  $('.tab').click(function (event) {
+    // var path = window.location.pathname;
+    // alert(path.slice(path.substr('/'), path.length))
   });
 });
