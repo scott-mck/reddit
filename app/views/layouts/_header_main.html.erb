@@ -2,7 +2,7 @@
 <ul class="tabs">
   <% %w(hot new rising controversial top gilded wiki promoted).each do |tab| %>
     <li class="tab">
-      <a href="<%= tab %>"><%= tab %></a>
+      <a href="/r/<%= params[:subreddit] %>/<%= tab %>"><%= tab %></a>
     </li>
   <% end %>
 </ul>
