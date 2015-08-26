@@ -1,19 +1,20 @@
 .posts-index-item {
   min-height: 70px;
-}
+  margin-bottom: 15px;
+  font-size: medium;
 
-.posts img {
-  float: left;
-  margin-right: 5px;
-  width: 70px;
-  height: auto;
-}
+  img {
+    float: left;
+    margin-right: 5px;
+    width: 70px;
+    height: auto;
+  }
 
-.posts .link {
-  color: blue;
-  font-size: 17px;
-
-  &:hover {
-    cursor: pointer;
+  a {
+    color: blue;
+    &:hover {
+      color: blue;
+      text-decoration: none;
+    }
   }
 }

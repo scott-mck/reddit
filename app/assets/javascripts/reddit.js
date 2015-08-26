@@ -4,19 +4,21 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var router = new Reddit.Routers.Router({
-      $rootEl: $('#main')
-    });
-
-    var header = new Reddit.Views.Header({
-      router: router
-    });
-    $('#header').html(header.render().$el);
-
-    Backbone.history.start();
+    var posts = new Reddit.Collections.Posts();
+    posts.fetch({
+      url: 'https://www.reddit.com/.json',
+      success: function () {
+        posts.each(function (post) {
+           view = new Reddit.Views.PostsIndexItem({
+            model: post
+          });
+          $('.posts').append(view.render().$el);
+        });
+      }
+    })
   }
 };
 
 $(document).ready(function(){
-  // Reddit.initialize();
+  Reddit.initialize();
 });
