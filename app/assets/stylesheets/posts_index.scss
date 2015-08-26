@@ -1,25 +1,43 @@
 .posts {
-  margin-left: 8px;
+  margin-left: 18px;
 }
 
 .posts-index-item {
-  min-height: 120px;
+  margin-top: 20px;
   font-size: medium;
+  max-width: 100%;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
 
   .votes {
     float: left;
+    font-family: arial;
+    font-align: right;
+    color: #c6c6c6;
+    width: 70px;
+
+    img {
+      display: block;
+      margin: auto;
+    }
   }
 
   .post-content {
-    float: left;
-    width: 840px;
+    display: flex;
   }
 
-  img {
+  .picture {
     float: left;
     margin-right: 5px;
-    width: 70px;
-    height: auto;
+    max-width: 70px;
+
+    img {
+      width: 70px;
+    }
   }
 
   a.post-title {

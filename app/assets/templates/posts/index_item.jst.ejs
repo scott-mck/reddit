@@ -1,32 +1,38 @@
 <div class="votes">
-  <%= index + 1 %>
+  <img src="https://www.reddit.com/static/aupgray.gif">
+  <%= index + 1 %> 5000
+  <img src="http://i.weirdnutdaily.com/images/downvote.gif">
 </div>
 
-<img src="<%= thumbnail %>">
-
 <div class="post-content">
-  <a href="<%= post.get('link_url') %>" class="post-title">
-    <%= post.get('data').title %>
-  </a>
+<div class="picture">
+  <img src="<%= thumbnail %>" class="picture">
+</div>
 
-  <span class="domain">
-    <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
-      (<%= post.get('data').domain %>)
+  <div>
+    <a href="<%= post.get('link_url') %>" class="post-title">
+      <%= post.get('data').title %>
     </a>
-  </span>
 
-  <div class="timeago">
-    submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
-    by
-    <a href="#"><%= post.get('data').author %></a>
-    to
-    <a href="<%= '/r/' + post.get('data').subreddit %>">
-      <%= '/r/' + post.get('data').subreddit %>
-    </a>
-  </div>
+    <span class="domain">
+      <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
+        (<%= post.get('data').domain %>)
+      </a>
+    </span>
 
-  <div class="comments">
-    <%= post.get('data').num_comments %> comments
-    <span>share</span>
+    <div class="timeago">
+      submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
+      by
+      <a href="#"><%= post.get('data').author %></a>
+      to
+      <a href="<%= '/r/' + post.get('data').subreddit %>">
+        <%= '/r/' + post.get('data').subreddit %>
+      </a>
+    </div>
+
+    <div class="comments">
+      <%= post.get('data').num_comments %> comments
+      <span>share</span>
+    </div>
   </div>
 </div>
