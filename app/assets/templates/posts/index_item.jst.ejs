@@ -2,3 +2,7 @@
 <a href="<%= post.get('link_url') %>">
   <%= post.get('data').title %>
 </a>
+<span class="domain">
+  (<%= post.get('data').domain %>)
+</span><br>
+submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
