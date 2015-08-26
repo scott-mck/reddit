@@ -1,7 +1,19 @@
+.posts {
+  margin-left: 8px;
+}
+
 .posts-index-item {
-  min-height: 70px;
-  margin-bottom: 15px;
+  min-height: 120px;
   font-size: medium;
+
+  .votes {
+    float: left;
+  }
+
+  .post-content {
+    float: left;
+    width: 840px;
+  }
 
   img {
     float: left;
@@ -10,16 +22,47 @@
     height: auto;
   }
 
-  a {
+  a.post-title {
     color: blue;
+    margin-right: 8px;
+
     &:hover {
       color: blue;
       text-decoration: none;
     }
   }
 
-  .domain, .timeago {
+  .domain a {
+    display: inline-block;
     color: #888;
     font-size: x-small;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .timeago {
+    color: #888;
+    font-size: x-small;
+
+    a {
+      color: #369;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .comments {
+    color: #888;
+    font-weight: bold;
+    font-size: x-small;
+
+    span {
+      margin-left: 8px;
+    }
   }
 }

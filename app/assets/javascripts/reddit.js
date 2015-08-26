@@ -10,7 +10,8 @@ window.Reddit = {
       success: function () {
         posts.each(function (post) {
            view = new Reddit.Views.PostsIndexItem({
-            model: post
+            model: post,
+            index: posts.indexOf(post)
           });
           $('.posts').append(view.render().$el);
         });

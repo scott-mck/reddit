@@ -1,13 +1,32 @@
+<div class="votes">
+  <%= index + 1 %>
+</div>
+
 <img src="<%= thumbnail %>">
 
-<a href="<%= post.get('link_url') %>">
-  <%= post.get('data').title %>
-</a>
+<div class="post-content">
+  <a href="<%= post.get('link_url') %>" class="post-title">
+    <%= post.get('data').title %>
+  </a>
 
-<span class="domain">
-  (<%= post.get('data').domain %>)
-</span>
+  <span class="domain">
+    <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
+      (<%= post.get('data').domain %>)
+    </a>
+  </span>
 
-<div class="timeago">
-  submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
+  <div class="timeago">
+    submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
+    by
+    <a href="#"><%= post.get('data').author %></a>
+    to
+    <a href="<%= '/r/' + post.get('data').subreddit %>">
+      <%= '/r/' + post.get('data').subreddit %>
+    </a>
+  </div>
+
+  <div class="comments">
+    <%= post.get('data').num_comments %> comments
+    <span>share</span>
+  </div>
 </div>
