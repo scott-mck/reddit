@@ -138,4 +138,23 @@
       color: red;
     }
   }
+
+  .join-invite {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #EFF7FF;
+    color: gray;
+    padding: 4px;
+    border-top-left-radius: 6px;
+
+    a {
+      color: #369;
+      text-decoration: none;
+    }
+
+    a.language {
+      font-weight: bold;
+    }
+  }
 }
