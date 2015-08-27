@@ -16,7 +16,7 @@ window.Reddit = {
           $('.posts').append(view.render().$el);
         });
       }
-    })
+    });
   }
 };
 

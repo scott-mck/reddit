@@ -3,13 +3,13 @@
   <% %w(hot new rising controversial top gilded wiki promoted).each do |tab| %>
     <% if params[:sort].nil? && tab == 'hot' %>
       <li class="tab selected">
-        <a href="/r/<%= params[:subreddit] %>/hot">hot</a>
+        <a href="<%= @subreddit %>/hot">hot</a>
       </li>
       <% next %>
     <% end %>
 
     <li class="tab <%= 'selected' if params[:sort] == tab %>">
-      <a href="/r/<%= params[:subreddit] %>/<%= tab %>"><%= tab %></a>
+      <a href="<%= @subreddit %>/<%= tab %>"><%= tab %></a>
     </li>
   <% end %>
 </ul>
