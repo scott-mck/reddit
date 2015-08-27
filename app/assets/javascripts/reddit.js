@@ -1,3 +1,5 @@
+// TODO: fix random subreddit response
+
 window.Reddit = {
   Models: {},
   Collections: {},
@@ -6,8 +8,10 @@ window.Reddit = {
   initialize: function() {
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
-      url: 'https://www.reddit.com/' + window.location.pathname + '.json',
-      success: function () {
+      url: 'https://www.reddit.com' + window.location.pathname + '.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function (collection, resp) {
         posts.each(function (post) {
            view = new Reddit.Views.PostsIndexItem({
             model: post,
@@ -15,8 +19,16 @@ window.Reddit = {
           });
           $('.posts').append(view.render().$el);
         });
-      }
+        if (window.location.pathname === '/r/random') {
+          window.history.pushState(
+            "something",
+            "Title",
+            resp.data.children[0].data.subreddit
+          );
+        }
+      },
     });
+
   }
 };
 
