@@ -1,11 +1,10 @@
 .posts {
-  margin-left: 18px;
+  margin-left: 10px;
 }
 
 .posts-index-item {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: medium;
-  max-width: 100%;
 
   &:after {
     content: "";
@@ -13,12 +12,22 @@
     display: block;
   }
 
+  .rank {
+    float: left;
+    margin-top: 14px;
+    margin-left: 8px;
+    font-align: right;
+    font-family: arial;
+    color: #c6c6c6;
+  }
+
   .votes {
     float: left;
-    font-family: arial;
-    font-align: right;
+    font-weight: bold;
+    font-size: small;
     color: #c6c6c6;
-    width: 70px;
+    width: 50px;
+    text-align: center;
 
     img {
       display: block;
