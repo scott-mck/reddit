@@ -9,14 +9,16 @@
 </div>
 
 <div class="post-content">
-<div class="picture">
-  <% if (thumbnail) { %>
-    <img src="<%= thumbnail %>" class="picture">
-  <% } %>
-</div>
+  <div class="picture">
+    <% if (thumbnail) { %>
+      <a href="<%= post.get('data').url %>">
+        <img src="<%= thumbnail %>" class="picture">
+      </a>
+    <% } %>
+  </div>
 
   <div>
-    <a href="<%= post.get('link_url') %>" class="post-title">
+    <a href="<%= post.get('data').url %>" class="post-title">
       <%= post.get('data').title %>
     </a>
 
@@ -29,7 +31,8 @@
     <div class="timeago">
       submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
       by
-      <a href="#"><%= post.get('data').author %></a>
+      <a href="https://www.reddit.com/user/<%= post.get('data').author %>">
+        <%= post.get('data').author %></a>
       to
       <a href="<%= '/r/' + post.get('data').subreddit %>">
         <%= '/r/' + post.get('data').subreddit %>
@@ -37,7 +40,8 @@
     </div>
 
     <div class="comments">
-      <%= post.get('data').num_comments %> comments
+      <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
+        <%= post.get('data').num_comments %> comments</a>
       <span>share</span>
     </div>
   </div>
