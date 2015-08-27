@@ -32,6 +32,10 @@
     img {
       display: block;
       margin: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 

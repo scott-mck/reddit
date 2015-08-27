@@ -6,7 +6,7 @@ window.Reddit = {
   initialize: function() {
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
-      url: 'https://www.reddit.com/.json',
+      url: 'https://www.reddit.com/' + window.location.pathname + '.json',
       success: function () {
         posts.each(function (post) {
            view = new Reddit.Views.PostsIndexItem({

@@ -104,15 +104,17 @@
 
   li.tab {
     float: left;
-    height: 19px;
+    height: 18px;
     margin-right: 6px;
+    padding-top: 3px;
     padding-right: 6px;
     padding-left: 6px;
     background-color: #eff7ff;
     color: #369;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     list-style-type: none;
+    line-height: 1.1;
     border-bottom: 1px solid #5f99cf;
 
     a {
