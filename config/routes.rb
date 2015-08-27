@@ -1,3 +1,5 @@
+# TODO: Fix routes for front, all, random, etc.
+
 Rails.application.routes.draw do
   get '/' => 'r#index'
   get 'r/*subreddit/(*sort)' => 'r#index'

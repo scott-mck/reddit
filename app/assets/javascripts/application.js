@@ -26,19 +26,20 @@
 
 $(document).ready(function() {
   $(document).mouseup(function (event) {
+    var mySubreddits = $('.my-subreddits');
     var container = $('.my-subreddits-dropdown');
 
-    if (!container.is(event.target) &&
+    if (!container.is(event.target) && !mySubreddits.is(event.target) &&
           container.has(event.target).length === 0) {
-      container.hide();
+      container.css('display', 'none');
     }
   });
 
-  $('.my-subreddits').click(function (event) {
+  $('.my-subreddits').click(function () {
     if ($('.my-subreddits-dropdown').css('display') === 'none') {
-      $('.my-subreddits-dropdown').show();
+      $('.my-subreddits-dropdown').css('display', 'block');
     } else {
-      $('.my-subreddits-dropdown').hide();
+      $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
 });
