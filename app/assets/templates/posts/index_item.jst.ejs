@@ -10,7 +10,9 @@
 
 <div class="post-content">
 <div class="picture">
-  <img src="<%= thumbnail %>" class="picture">
+  <% if (thumbnail) { %>
+    <img src="<%= thumbnail %>" class="picture">
+  <% } %>
 </div>
 
   <div>
