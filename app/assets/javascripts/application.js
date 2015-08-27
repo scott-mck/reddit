@@ -36,9 +36,9 @@ $(document).ready(function() {
 
   $('.my-subreddits').click(function (event) {
     if ($('.my-subreddits-dropdown').css('display') === 'none') {
-      $('.my-subreddits-dropdown').hide();
-    } else {
       $('.my-subreddits-dropdown').show();
+    } else {
+      $('.my-subreddits-dropdown').hide();
     }
   });
 });
