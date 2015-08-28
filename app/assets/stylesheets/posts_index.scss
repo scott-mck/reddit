@@ -106,4 +106,14 @@
       }
     }
   }
+
+  &.sponsored {
+    display: inline-block;
+    background: #F8F8F8;
+    border: 1px solid gray;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    width: 70%;
+  }
 }

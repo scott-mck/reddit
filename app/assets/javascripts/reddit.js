@@ -6,15 +6,14 @@ window.Reddit = {
   initialize: function() {
     var sponsoredPost = new Reddit.Collections.Posts();
     sponsoredPost.fetch({
-      url: 'https://www.reddit.com/new.json',
+      url: 'https://www.reddit.com/rising.json',
       dataType: 'jsonp',
       jsonp: 'jsonp',
       success: function () {
         view = new Reddit.Views.PostsIndexItem({
          model: sponsoredPost.first(),
-         index: []
        });
-       $('.posts').prepend(view.render().$el);
+       $('.posts').prepend(view.render().$el.addClass('sponsored'));
      }
     });
 
