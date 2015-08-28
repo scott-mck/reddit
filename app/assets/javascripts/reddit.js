@@ -4,6 +4,20 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
+    var sponsoredPost = new Reddit.Collections.Posts();
+    sponsoredPost.fetch({
+      url: 'https://www.reddit.com/new.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function () {
+        view = new Reddit.Views.PostsIndexItem({
+         model: sponsoredPost.first(),
+         index: []
+       });
+       $('.posts').prepend(view.render().$el);
+     }
+    });
+
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
       url: 'https://www.reddit.com' + window.location.pathname + '.json',
@@ -13,7 +27,7 @@ window.Reddit = {
         posts.each(function (post) {
            view = new Reddit.Views.PostsIndexItem({
             model: post,
-            index: posts.indexOf(post)
+            index: posts.indexOf(post) + 1
           });
           $('.posts').append(view.render().$el);
         });
