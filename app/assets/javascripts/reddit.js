@@ -13,8 +13,21 @@ window.Reddit = {
         view = new Reddit.Views.PostsIndexItem({
          model: sponsoredPost.first(),
        });
-       $('.posts').prepend(view.render().$el.addClass('sponsored'));
+       $('#sponsored').prepend(view.render().$el.addClass('sponsored'));
      }
+    });
+
+    var trendingSubreddits = new Reddit.Collections.Posts();
+    trendingSubreddits.fetch({
+      url: 'https://www.reddit.com/r/trendingsubreddits.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function () {
+        var view = new Reddit.Views.TrendingSubreddits({
+          model: trendingSubreddits.first()
+        });
+        $('#trending-subreddits').append(view.render().$el);
+      }
     });
 
     var posts = new Reddit.Collections.Posts();

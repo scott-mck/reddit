@@ -9,13 +9,13 @@
 </div>
 
 <div class="post-content">
-  <div class="picture">
-    <% if (thumbnail) { %>
+  <% if (thumbnail) { %>
+    <div class="picture">
       <a href="<%= post.get('data').url %>">
         <img src="<%= thumbnail %>" class="picture">
       </a>
-    <% } %>
-  </div>
+    </div>
+  <% } %>
 
   <div>
     <a href="<%= post.get('data').url %>" class="post-title">

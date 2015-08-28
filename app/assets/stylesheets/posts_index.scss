@@ -109,11 +109,13 @@
 
   &.sponsored {
     position: relative;
-    background: #F8F8F8;
-    border: 1px solid gray;
+    margin-top: 6px;
+    margin-left: -5px;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 10px;
+    background: #F8F8F8;
+    border: 1px solid gray;
     min-height: 80px;
 
     &:after {
