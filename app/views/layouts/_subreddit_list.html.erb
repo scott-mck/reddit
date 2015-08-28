@@ -34,6 +34,10 @@
 
 <div class="my-subreddits-dropdown">
   <% subreddit_list.each do |sub| %>
-    <div class="subreddit-index-item"><%= sub.name.upcase %></div>
+    <a href="/r/<%= sub.name %>">
+      <div class="subreddit-index-item">
+        <%= sub.name.upcase %>
+      </div>
+    </a>
   <% end %>
 </div>
