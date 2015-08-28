@@ -1,5 +1,3 @@
-// TODO: fix random subreddit response
-
 window.Reddit = {
   Models: {},
   Collections: {},
@@ -19,6 +17,8 @@ window.Reddit = {
           });
           $('.posts').append(view.render().$el);
         });
+
+        // change url to show fetched subreddit
         if (window.location.pathname === '/r/random') {
           window.history.pushState(
             "something",
@@ -28,7 +28,6 @@ window.Reddit = {
         }
       },
     });
-
   }
 };
 
