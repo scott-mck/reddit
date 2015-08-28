@@ -1,1 +1,20 @@
-trending subreddits
+<div class="graph"></div>
+<div class="trending">
+  trending subreddits
+
+  <a href="#">/r/KenM</a>
+  <a href="#">/r/didthney</a>
+  <a href="#">/r/52weeksofcooking</a>
+  <a href="#">/r/suits</a>
+  <a href="#">/r/drivermacgyver</a>
+
+    <% if (this.model.get('data').num_comments == 1) { %>
+      <a href="https://www.reddit.com<%= this.model.get('data').permalink %>"
+         class="comments">
+        1 comment</a>
+    <% } else { %>
+    <a href="https://www.reddit.com<%= this.model.get('data').permalink %>"
+       class="comments">
+      <%= this.model.get('data').num_comments %> comments</a>
+    <% } %>
+</div>

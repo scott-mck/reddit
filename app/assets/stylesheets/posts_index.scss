@@ -1,3 +1,54 @@
+#trending-subreddits {
+  margin-top: 7px;
+  margin-left: 76px;
+  margin-bottom: -2px;
+  color: #29541c;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  .graph {
+    float: left;
+    margin-right: 5px;
+    height: 15px;
+    width: 16px;
+    background-image: url("https://www.redditstatic.com/sprite-reddit.VLn6vQIEOc8.png");
+    background-position: -70px -839px;
+  }
+
+  .trending {
+    float: left;
+
+    .comments {
+      margin-top: 2px;
+      margin-left: 4px;
+      color: #888;
+      font-weight: bold;
+      font-size: x-small;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      margin-right: 2px;
+      color: #369;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    a:first-child {
+      margin-left: 6px;
+    }
+  }
+}
+
 .posts {
   margin-left: 10px;
 }
@@ -110,13 +161,13 @@
   &.sponsored {
     position: relative;
     margin-top: 6px;
-    margin-left: -5px;
+    margin-left: 5px;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 10px;
     background: #F8F8F8;
     border: 1px solid gray;
-    min-height: 80px;
+    min-height: 85px;
 
     &:after {
       position: absolute;
