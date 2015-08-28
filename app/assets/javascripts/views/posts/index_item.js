@@ -22,7 +22,8 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     var content = this.template({
       post: this.model,
       thumbnail: thumbnail,
-      index: this.index
+      index: this.index,
+      num_comments: this.model.get('data').num_comments
     });
     this.$el.html(content);
     return this;

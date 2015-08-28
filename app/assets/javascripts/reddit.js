@@ -39,7 +39,7 @@ window.Reddit = {
             resp.data.children[0].data.subreddit
           );
         }
-      },
+      }
     });
   }
 };

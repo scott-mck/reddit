@@ -108,12 +108,25 @@
   }
 
   &.sponsored {
-    display: inline-block;
+    position: relative;
     background: #F8F8F8;
     border: 1px solid gray;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 10px;
-    width: 70%;
+    min-height: 80px;
+
+    &:after {
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+      content: "what's this?";
+      color: #336699;
+      font-size: x-small;
+    }
+
+    &:hover:after {
+      cursor: help;
+    }
   }
 }
