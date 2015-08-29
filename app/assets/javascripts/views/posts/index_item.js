@@ -1,6 +1,6 @@
-// TODO: domain links to real reddit /domain
-// TODO: link title links to real reddit post
-// TODO: user links to actual user's page
+// domain links to real reddit /domain
+// link title links to real reddit post
+// user links to actual user's page
 
 Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],
