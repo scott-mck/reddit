@@ -20,12 +20,12 @@ window.Reddit = {
     }
 
     if (window.location.pathname === '/') {
-      var trending = $.ajax({
+      $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
         dataType: 'jsonp',
         jsonp: 'jsonp',
-        success: function () {
-          var trendingPost = trending.responseJSON.data.children[0].data;
+        success: function (trending) {
+          var trendingPost = trending.data.children[0].data;
           var regEx = /\/r\/\w*/g;
           var subs = trendingPost.title.match(regEx);
 
