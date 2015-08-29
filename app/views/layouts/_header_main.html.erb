@@ -8,6 +8,7 @@
       <% next %>
     <% end %>
 
+    <!-- TODO: make sure clicking on tab fetches correctly -->
     <li class="tab <%= 'selected' if params[:sort] == tab %>">
       <a href="<%= @subreddit %>/<%= tab %>"><%= tab %></a>
     </li>
