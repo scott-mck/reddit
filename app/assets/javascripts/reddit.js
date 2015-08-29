@@ -11,20 +11,25 @@ window.Reddit = {
       jsonp: 'jsonp',
       success: function () {
         view = new Reddit.Views.PostsIndexItem({
-         model: sponsoredPost.first(),
-       });
-       $('#sponsored').prepend(view.render().$el.addClass('sponsored'));
-     }
+          model: sponsoredPost.first(),
+        });
+        $('#sponsored').prepend(view.render().$el.addClass('sponsored'));
+      }
     });
 
-    var trendingSubreddits = new Reddit.Collections.Posts();
-    trendingSubreddits.fetch({
-      url: 'https://www.reddit.com/r/trendingsubreddits.json',
+    var trending = $.ajax({
+      url: 'https://reddit.com/r/trendingsubreddits.json',
       dataType: 'jsonp',
       jsonp: 'jsonp',
       success: function () {
+        var trendingPost = trending.responseJSON.data.children[0].data;
+        var regEx = /\/r\/\w*/g;
+        var subs = trendingPost.title.match(regEx);
+
         var view = new Reddit.Views.TrendingSubreddits({
-          model: trendingSubreddits.first()
+          subs: subs,
+          numComments: trendingPost.num_comments,
+          permalink: trendingPost.permalink
         });
         $('#trending-subreddits').append(view.render().$el);
       }
@@ -44,7 +49,7 @@ window.Reddit = {
           $('.posts').append(view.render().$el);
         });
 
-        // change url to show fetched subreddit
+        // change url from /r/random to the fetched subreddit
         if (window.location.pathname === '/r/random') {
           window.history.pushState(
             "something",
