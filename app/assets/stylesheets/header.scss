@@ -15,8 +15,6 @@
 
 .subreddit-index-item {
   font-size: 9px;
-  padding-left: 1px;
-  padding-right: 1px;
 
   a {
     color: black;
@@ -35,8 +33,15 @@
   }
 }
 
+.separator {
+  margin-left: 1px;
+  font-size: 8px;
+  font-weight: 500;
+  color: gray;
+}
+
 .my-subreddits {
-  margin-right: 20px;
+  margin-right: 17px;
   font-size: 9px;
   padding-left: 1px;
   padding-right: 1px;
@@ -67,13 +72,17 @@
   border-bottom: 1px solid #808080;
   color: #369;
 
-  a:hover {
+  a {
     color: #369;
-    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .subreddit-index-item {
-    padding: 2px;
+    padding-left: 3px;
+    padding-top: 1px;
+    padding-bottom: 2px;
 
     &:hover {
       background-color: #c7def7;

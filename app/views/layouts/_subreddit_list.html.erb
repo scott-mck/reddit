@@ -6,37 +6,37 @@
   <span class="subreddit-index-item">
     <a class="<%= 'inuse' if params[:subreddit].nil? %>"
        href="/r/front">FRONT</a>
-  </span> -
+  </span><span class="separator">-</span>
 
   <span class="subreddit-index-item">
     <a class="<%= 'inuse' if params[:subreddit] == 'all' %>"
        href="/r/all">ALL</a>
-  </span> -
+  </span><span class="separator">-</span>
 
   <span class="subreddit-index-item">
     <a href="/r/random">RANDOM</a>
   </span>
 
-  <span style="margin-left: 5px; margin-right: 5px;">|</span>
+  <span class="separator">|</span>
 
   <% subreddit_list.each_with_index do |sub, i| %>
     <span class="subreddit-index-item">
-      <a class="<%= 'inuse' if params[:subreddit] == sub.name %>"
-         href="/r/<%= sub.name %>"><%= sub.name.upcase %></a>
+      <a class="<%= 'inuse' if params[:subreddit] == sub %>"
+         href="/r/<%= sub %>"><%= sub.upcase %></a>
     </span>
 
     <% unless i == subreddit_list.length - 1 %>
-      -
+      <span class="separator">-</span>
     <% end %>
   <% end %>
 </div>
 <span class="subreddit-index-item more">MORE >></span>
 
 <div class="my-subreddits-dropdown">
-  <% subreddit_list.each do |sub| %>
-    <a href="/r/<%= sub.name %>">
+  <% dropdown_subreddits.each do |sub| %>
+    <a href="/r/<%= sub %>">
       <div class="subreddit-index-item">
-        <%= sub.name.upcase %>
+        <%= sub.upcase %>
       </div>
     </a>
   <% end %>
