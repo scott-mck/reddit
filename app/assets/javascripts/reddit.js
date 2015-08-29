@@ -4,7 +4,7 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname.indexOf('/r/') === -1) {
       var sponsoredPost = new Reddit.Collections.Posts();
       sponsoredPost.fetch({
         url: 'https://www.reddit.com/rising.json',
@@ -17,7 +17,9 @@ window.Reddit = {
           $('#sponsored').prepend(view.render().$el.addClass('sponsored'));
         }
       });
+    }
 
+    if (window.location.pathname === '/') {
       var trending = $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
         dataType: 'jsonp',
