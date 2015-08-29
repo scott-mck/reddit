@@ -1,5 +1,3 @@
-# TODO: fix random route
-
 Rails.application.routes.draw do
   get '/' => 'r#index'
   get 'r/*subreddit/(*sort)' => 'r#index'
