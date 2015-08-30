@@ -42,4 +42,8 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
+
+  $('#sidebar .search').click(function (event) {
+    event.preventDefault();
+  });
 });
