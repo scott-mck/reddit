@@ -1,6 +1,14 @@
 <!-- forms do not work -->
 
-<form class="search" action="<%= subreddits_url(params[:subreddit] || 'front') %>" method="post">
+<%= params[:subreddit] %>
+
+<% if params[:subreddit] == nil %>
+  <% action = '/' %>
+<% else %>
+  <% action = subreddits_url(params[:subreddit]) %>
+<% end %>
+
+<form class="search" action="<%= action %>" method="post">
   <%= auth_token %>
 
   <input type="text" class="text-field" name="q" placeholder="search">

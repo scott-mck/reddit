@@ -8,14 +8,10 @@
 
 class RController < ApplicationController
   def index
-    if params[:subreddit] == 'front'
-      redirect_to controller: 'r', action: 'index', q: params[:q], subreddit: nil
-    end
+    @subreddit = '/r/' + params[:subreddit] if params[:subreddit]
+  end
 
-    if (params[:subreddit].nil? || params[:subreddit] == 'front') &&
-       params[:sort] == 'hot'
-       redirect_to '/'
-    end
+  def search
     @subreddit = '/r/' + params[:subreddit] if params[:subreddit]
   end
 end
