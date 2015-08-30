@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.serializejson
 //= require jquery.timeago
 //= require underscore
 //= require backbone
@@ -43,7 +44,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#sidebar .search').click(function (event) {
+  $('#sidebar .search').submit(function (event) {
     event.preventDefault();
   });
 });

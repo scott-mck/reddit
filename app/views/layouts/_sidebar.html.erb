@@ -1,7 +1,7 @@
 <!-- forms do not work -->
 
-<form class="search">
-  <input type="text" class="text-field" placeholder="search">
+<form class="search" action="<% subreddits_url(params[:subreddit] || 'front') %>">
+  <input type="text" class="text-field" name="query" placeholder="search">
   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AA
             AAeFBMVEUAAACJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiY
             mJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiY

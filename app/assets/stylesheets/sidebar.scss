@@ -21,6 +21,10 @@
       right: 9px;
       width: 13px;
       height: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
