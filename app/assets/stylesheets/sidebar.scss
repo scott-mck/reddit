@@ -1,13 +1,13 @@
 #sidebar {
-  margin: 7px 6px 7px 5px;
-  input {
+  margin: 7px 5px 0px 5px;
+  input.text-field {
     border: 1px solid gray;
   }
 
   form.search {
     position: relative;
 
-    input {
+    input.text-field {
       padding-left: 9px;
       height: 30px;
       width: 300px;
@@ -31,25 +31,40 @@
 
     input.text-field {
       display: inline-block;
-      padding: 6px;
-      width: 141px;
+      padding: 7px;
+      width: 142px;
       height: 27px;
       font-size: 11px;
       border: 1px solid #999;
 
       &:first-child {
-        margin-right: 2px;
+        padding: 6px;
+        width: 141px;
+        margin-right: 1px;
       }
     }
 
     input.checkbox {
       display: inline-block;
-      margin: 11px 5px 6px 0px;
+      margin: 11px 5px 5px 0px;
       font-size: 15px;
     }
 
     a {
-      margin-left: 5px;
+      margin-left: 12px;
+      color: #369;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    button {
+      float: right;
+      margin-top: 3px;
+      margin-right: -1px;
+      width: 42px;
+      height: 20px;
+      font-size: 11px;
     }
   }
 }
