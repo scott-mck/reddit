@@ -43,8 +43,4 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
-
-  $('#sidebar .search').submit(function (event) {
-    event.preventDefault();
-  });
 });
