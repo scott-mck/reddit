@@ -1,3 +1,5 @@
+// TODO: Make a new view for sponsored post
+
 window.Reddit = {
   Models: {},
   Collections: {},
@@ -20,6 +22,7 @@ window.Reddit = {
       });
     }
 
+    // trending subreddits
     if (window.location.pathname === '/') {
       $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
@@ -40,6 +43,7 @@ window.Reddit = {
       });
     }
 
+    // main posts
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
       url: 'https://www.reddit.com' + window.location.pathname + '.json',
@@ -63,6 +67,19 @@ window.Reddit = {
             resp.data.children[0].data.subreddit
           );
         }
+      }
+    });
+
+    // advertisement (sidebar)
+    $.ajax({
+      url: 'https://www.reddit.com/r/ads/.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function (ad) {
+        var view = new Reddit.Views.Ad({
+          model: ad
+        });
+        $('#sidebar .ad').append(view.render().$el);
       }
     });
   }

@@ -1,8 +1,8 @@
 #sidebar {
   float: right;
   width: 300px;
+  margin: 0px 5px 0px 5px;
 
-  margin: 7px 5px 0px 5px;
   input.text-field {
     border: 1px solid gray;
   }
@@ -124,5 +124,9 @@
     background-image: url('http://www.redditstatic.com/sprite-reddit.png');
     width: 25px;
     height: 35px;
+  }
+
+  .ad img {
+    margin-top: 11px;
   }
 }

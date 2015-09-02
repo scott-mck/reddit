@@ -10,4 +10,4 @@ Reddit.Views.Header = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
-})
+});
