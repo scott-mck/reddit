@@ -93,4 +93,36 @@
       font-size: 11px;
     }
   }
+
+  .submit-pic-left {
+    position: relative;
+    margin-top: 11px;
+    width: 300px;
+    height: 31px;
+    border: 1px solid #c4dbf1;
+    background-position: 0px -278px;
+    background-image: url('http://www.redditstatic.com/sprite-reddit.png');
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: -1px;
+    font-size: 150%;
+    font-weight: bold;
+    color: #369;
+
+    &:hover {
+      cursor: pointer;
+      // image color change
+    }
+  }
+
+  .submit-pic-right {
+    position: absolute;
+    right: -1px;
+    top: -2px;
+    background-position: -61px -546px;
+    background-color: white;
+    background-image: url('http://www.redditstatic.com/sprite-reddit.png');
+    width: 25px;
+    height: 35px;
+  }
 }
