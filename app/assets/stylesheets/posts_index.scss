@@ -61,7 +61,7 @@
   .rank {
     float: left;
     margin-top: 14px;
-    margin-left: 8px;
+    margin-left: 17px;
     font-family: arial;
     color: #c6c6c6;
   }
@@ -86,11 +86,11 @@
 
   .picture {
     float: left;
-    margin-right: 5px;
-    max-width: 70px;
+    margin-right: 3px;
 
     img {
       width: 70px;
+      height: auto;
     }
   }
 
@@ -158,8 +158,12 @@
     border: 1px solid gray;
     min-height: 85px;
 
+    .ranks {
+      display: none;
+    }
+
     .votes {
-      margin-left: 12px;
+      margin-left: 3px;
     }
 
     &:hover:after {

@@ -10,8 +10,11 @@
 
   <%= render 'layouts/header' %>
   <div id="main">
-    <div id="sidebar">
-      <%= render 'layouts/sidebar' %>
+    <div class="flex">
+      <div id="sponsored"></div>
+      <div id="sidebar">
+        <%= render 'layouts/sidebar' %>
+      </div>
     </div>
     <%= yield %>
   </div>

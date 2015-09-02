@@ -16,10 +16,10 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     var paddingLeft;
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       thumbnail = 'https://www.reddit.com/static/self_default2.png';
-      paddingLeft = '142px;'
+      paddingLeft = '72px;';
     } else if (this.model.get('data').thumbnail !== '') {
       thumbnail = this.model.get('data').thumbnail;
-      paddingLeft = '72px;'
+      paddingLeft = '161px;';
     }
 
     var content = this.template({
