@@ -9,15 +9,11 @@
 <body>
 
   <%= render 'layouts/header' %>
-  <div style="display: flex;">
-
-    <div id="main">
-      <%= yield %>
-    </div>
+  <div id="main">
     <div id="sidebar">
       <%= render 'layouts/sidebar' %>
     </div>
-
+    <%= yield %>
   </div>
 </body>
 </html>

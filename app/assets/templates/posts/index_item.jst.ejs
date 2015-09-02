@@ -8,47 +8,44 @@
   <img src="http://i.weirdnutdaily.com/images/downvote.gif">
 </div>
 
-<div class="post-content">
-  <% if (thumbnail) { %>
-    <div class="picture">
-      <a href="<%= post.get('data').url %>">
-        <img src="<%= thumbnail %>" class="picture">
-      </a>
-    </div>
-  <% } %>
-
-  <div>
-    <a href="<%= post.get('data').url %>" class="post-title">
-      <%= post.get('data').title %>
+<% if (thumbnail) { %>
+  <div class="picture">
+    <a href="<%= post.get('data').url %>">
+      <img src="<%= thumbnail %>" class="picture">
     </a>
+  </div>
+<% } %>
+<div style="padding-left: <%= paddingLeft %>"> <!-- yuck -->
+  <a href="<%= post.get('data').url %>" class="post-title">
+    <%= post.get('data').title %>
+  </a>
 
-    <span class="domain">
-      <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
-        (<%= post.get('data').domain %>)
-      </a>
-    </span>
+  <span class="domain">
+    <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
+      (<%= post.get('data').domain %>)
+    </a>
+  </span>
 
-    <div class="timeago">
-      submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
-      by
-      <a href="https://www.reddit.com/user/<%= post.get('data').author %>">
-        <%= post.get('data').author %></a>
-      to
-      <a href="<%= '/r/' + post.get('data').subreddit %>">
-        <%= '/r/' + post.get('data').subreddit %>
-      </a>
-    </div>
+  <div class="timeago">
+    submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
+    by
+    <a href="https://www.reddit.com/user/<%= post.get('data').author %>">
+      <%= post.get('data').author %></a>
+    to
+    <a href="<%= '/r/' + post.get('data').subreddit %>">
+      <%= '/r/' + post.get('data').subreddit %>
+    </a>
+  </div>
 
-    <div class="comments">
-      <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
-        <% if (num_comments === 0) { %>
-          comment</a>
-        <% } else if (num_comments === 1) { %>
-          1 comment</a>
-        <% } else { %>
-          <%= num_comments %> comments</a>
-        <% } %>
-      <span>share</span>
-    </div>
+  <div class="comments">
+    <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
+      <% if (num_comments === 0) { %>
+        comment</a>
+      <% } else if (num_comments === 1) { %>
+        1 comment</a>
+      <% } else { %>
+        <%= num_comments %> comments</a>
+      <% } %>
+    <span>share</span>
   </div>
 </div>

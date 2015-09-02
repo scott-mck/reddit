@@ -4,40 +4,40 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    if (window.location.pathname.indexOf('/r/') === -1) {
-      var sponsoredPost = new Reddit.Collections.Posts();
-      sponsoredPost.fetch({
-        url: 'https://www.reddit.com/rising.json',
-        dataType: 'jsonp',
-        jsonp: 'jsonp',
-        success: function () {
-          view = new Reddit.Views.PostsIndexItem({
-            model: sponsoredPost.first(),
-          });
-          $('#sponsored').prepend(view.render().$el.addClass('sponsored'));
-        }
-      });
-    }
+    // if (window.location.pathname.indexOf('/r/') === -1) {
+    //   var sponsoredPost = new Reddit.Collections.Posts();
+    //   sponsoredPost.fetch({
+    //     url: 'https://www.reddit.com/rising.json',
+    //     dataType: 'jsonp',
+    //     jsonp: 'jsonp',
+    //     success: function () {
+    //       view = new Reddit.Views.PostsIndexItem({
+    //         model: sponsoredPost.first(),
+    //       });
+    //       $('#sponsored').append(view.render().$el.addClass('sponsored'));
+    //     }
+    //   });
+    // }
 
-    if (window.location.pathname === '/') {
-      $.ajax({
-        url: 'https://reddit.com/r/trendingsubreddits.json',
-        dataType: 'jsonp',
-        jsonp: 'jsonp',
-        success: function (trending) {
-          var trendingPost = trending.data.children[0].data;
-          var regEx = /\/r\/\w*/g;
-          var subs = trendingPost.title.match(regEx);
-
-          var view = new Reddit.Views.TrendingSubreddits({
-            subs: subs,
-            numComments: trendingPost.num_comments,
-            permalink: trendingPost.permalink
-          });
-          $('#trending-subreddits').append(view.render().$el);
-        }
-      });
-    }
+    // if (window.location.pathname === '/') {
+    //   $.ajax({
+    //     url: 'https://reddit.com/r/trendingsubreddits.json',
+    //     dataType: 'jsonp',
+    //     jsonp: 'jsonp',
+    //     success: function (trending) {
+    //       var trendingPost = trending.data.children[0].data;
+    //       var regEx = /\/r\/\w*/g;
+    //       var subs = trendingPost.title.match(regEx);
+    //
+    //       var view = new Reddit.Views.TrendingSubreddits({
+    //         subs: subs,
+    //         numComments: trendingPost.num_comments,
+    //         permalink: trendingPost.permalink
+    //       });
+    //       $('#trending-subreddits').append(view.render().$el);
+    //     }
+    //   });
+    // }
 
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
@@ -50,7 +50,8 @@ window.Reddit = {
             model: post,
             index: posts.indexOf(post) + 1
           });
-          $('.posts').append(view.render().$el);
+          var clearDiv = $("<div style='clear: left;'>");
+          $('#main').append(view.render().$el).append(clearDiv);
         });
 
         // change url from /r/random to the fetched subreddit

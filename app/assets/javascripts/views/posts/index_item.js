@@ -13,15 +13,19 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   render: function () {
     var defaults = ['self', 'nsfw', 'default'];
     var thumbnail;
+    var paddingLeft;
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       thumbnail = 'https://www.reddit.com/static/self_default2.png';
+      paddingLeft = '142px;'
     } else if (this.model.get('data').thumbnail !== '') {
       thumbnail = this.model.get('data').thumbnail;
+      paddingLeft = '72px;'
     }
 
     var content = this.template({
       post: this.model,
       thumbnail: thumbnail,
+      paddingLeft: paddingLeft,
       index: this.index,
       num_comments: this.model.get('data').num_comments
     });
