@@ -3,8 +3,9 @@ Reddit.Views.Ad = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      permalink: this.model.data.children[0].data.permalink,
-      src: this.model.data.children[0].data.preview.images[0].source.url
+      permalink: this.model.data.permalink,
+      src: this.model.data.preview.images[0].source.url,
+      url: this.model.data.url
     });
     this.$el.html(content);
     return this;

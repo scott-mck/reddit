@@ -126,7 +126,41 @@
     height: 35px;
   }
 
-  .ad img {
-    margin-top: 11px;
+  .ad {
+    text-align: center;
+    font-size: 13px;
+
+    img {
+      margin-top: 13px;
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #369;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .gold-progress-outer {
+    margin-top: 24px;
+    padding: 1px;
+    width: 300px;
+    height: 85px;
+    border: 1px solid #c4b487;
+    box-shadow: 0 0 10px #dad0b3 inset;
+  }
+
+  .gold-progress-inner {
+    padding: 6px;
+    border: 1px solid #dbd1b5;
+    width: 296px;
+    height: 81px;
+    color: #554a2a;
+    text-align: center;
+    font-family: "Bitstream Charter","Hoefler Text","Palatino Linotype",
+                 "Book Antiqua",Palatino,georgia,garamond,FreeSerif,serif;
+    font-size: 13px;
   }
 }

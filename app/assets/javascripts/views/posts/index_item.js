@@ -1,6 +1,8 @@
 // domain links to real reddit /domain
 // link title links to real reddit post
 // user links to actual user's page
+// TODO: vote numbers mess lots of things up
+// TODO: no paddingLeft for thumbnails === ''
 
 Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],

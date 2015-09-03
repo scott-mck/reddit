@@ -77,7 +77,7 @@ window.Reddit = {
       jsonp: 'jsonp',
       success: function (ad) {
         var view = new Reddit.Views.Ad({
-          model: ad
+          model: ad.data.children[0]
         });
         $('#sidebar .ad').append(view.render().$el);
       }

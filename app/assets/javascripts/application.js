@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.serializejson
 //= require jquery.timeago
+//= require jquery.ajax-cross-origin.min
 //= require underscore
 //= require backbone
 //= require composite_view
