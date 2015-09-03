@@ -1,7 +1,6 @@
 // domain links to real reddit /domain
 // link title links to real reddit post
 // user links to actual user's page
-// TODO: no paddingLeft for thumbnails === ''
 
 Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],
@@ -21,6 +20,8 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     } else if (this.model.get('data').thumbnail !== '') {
       thumbnail = this.model.get('data').thumbnail;
       paddingLeft = '152px;';
+    } else {
+      paddingLeft = '76px';
     }
 
     var content = this.template({
