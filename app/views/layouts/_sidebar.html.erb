@@ -1,5 +1,4 @@
 <!-- forms do not work -->
-<h1><%= get_gold_progress %></h1>
 
 <% if params[:subreddit] == nil %>
   <% action = '/' %>
@@ -40,9 +39,11 @@
   <div class="daily-gold-inner">
     daily reddit gold goal
     <div class="gold-progress">
-      <span class="percentage">37%</span>
+      <span class="percentage">
+        <%= get_gold_progress %>
+      </span>
       <div class="bar">
-        <div class="progress-bar"></div>
+        <div class="progress-bar" style="width:<%= get_gold_progress %>;"></div>
       </div>
     </div>
   </div>
