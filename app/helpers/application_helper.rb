@@ -27,7 +27,7 @@ module ApplicationHelper
        worldnews videos worldnews writingprompts)
   end
 
-  def get_gold_progress
+  def get_gold_progress # TODO: make this async somehow
     page = Nokogiri::HTML(open('https://www.reddit.com'))
     page.css('.goldvertisement').css('.progress').css('p')[0].text
   end
