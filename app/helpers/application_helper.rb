@@ -26,4 +26,9 @@ module ApplicationHelper
        television tifu todayilearned twoxchromosomes upliftingnews videos
        worldnews videos worldnews writingprompts)
   end
+
+  def get_gold_progress
+    page = Nokogiri::HTML(open('https://www.reddit.com'))
+    page.css('.goldvertisement').css('.progress').css('p')[0].text
+  end
 end
