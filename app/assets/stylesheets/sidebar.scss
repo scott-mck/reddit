@@ -243,22 +243,37 @@
         font-weight: bold;
         color: #825b25;
       }
+
+      &:first-child {
+        margin-bottom: 11px;
+      }
     }
 
     p.padding {
-      padding-top: 3px;
+      padding-top: 2px;
       padding-left: 74px;
     }
 
-    .buy-gold {
+    .gold-option {
       display: inline-block;
-      margin-top: 3px;
+      margin-top: 2px;
       margin-left: 7px;
       float: left;
+    }
+
+    .buy {
+      background-image: url('https://www.redditstatic.com/gold/reddit-gold-logo.png');
       width: 54px;
       height: 41px;
       background-size: 140px;
-      background-image: url('https://www.redditstatic.com/gold/reddit-gold-logo.png');
+    }
+
+    .give {
+      margin-left: 14px;
+      background-image: url('/assets/give_gold.png');
+      width: 36px;
+      height: 39px;
+      background-size: 37px;
     }
   }
 }
