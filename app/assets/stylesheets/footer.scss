@@ -1,27 +1,33 @@
 #footer {
   margin-bottom: 1000px;
+
   .footer-outer-box {
-    display: table;
-    padding: 15px;
+    padding: 15px 5px 5px 5px;
     margin: auto;
     border: 1px solid #F0F0F0;
     border-radius: 8px;
+    max-width: 612px;
+    height: 163px;
 
     .footer-section {
       float: left;
+      height: 100%;
+      width: 25%;
       color: #777;
 
       ul {
-        padding: 0px 20px 0px 20px;
+        padding-left: 15px;
+        height: 93%;
+        width: 100%;
         border-left: 1px solid #E0E0E0;
       }
 
       &:first-child ul {
-        padding-left: 0px;
         border: none;
       }
 
       h3 {
+        font-family: arial,verdana,helvetica,sans-serif;
         margin: 0px 0px 5px 0px;
         white-space: nowrap;
         font-size: 18px;
@@ -29,8 +35,16 @@
 
       li {
         list-style-type: none;
-        font-size: 13px;
-        color: #369;
+        font-size: 12px;
+
+        a {
+          color: #369;
+        }
+
+        a.reddit-gold {
+          font-weight: bold;
+          color: #9A7D2E;
+        }
       }
     }
   }
