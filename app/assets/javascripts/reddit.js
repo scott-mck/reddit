@@ -56,10 +56,11 @@ window.Reddit = {
             index: posts.indexOf(post) + 1
           });
           var clearDiv = $("<div style='clear: left;'>");
-          $('#main').append(view.render().$el).append(clearDiv);
+          $('#posts').append(view.render().$el).append(clearDiv);
         });
 
         // change url from /r/random to the fetched subreddit
+        // TODO: pressing 'back' does nothing but change address to /r/random
         if (window.location.pathname === '/r/random') {
           window.history.pushState(
             "something",

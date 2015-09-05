@@ -172,3 +172,39 @@
     }
   }
 }
+
+.view-more {
+  margin: 8px 5px 8px 5px;
+  font-size: larger;
+  color: gray;
+
+  .next {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 1px 4px 1px 4px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #369;
+
+    &:hover {
+      border: 1px solid #82A6C9;
+    }
+  }
+
+  .random-subreddit {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 1px 3px 1px 5px;
+    color: #369;
+
+    &:hover {
+      background: #f0f0f0;
+      border: 1px solid #82A6C9;
+    }
+  }
+}
