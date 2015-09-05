@@ -275,6 +275,18 @@
       height: 39px;
       background-size: 37px;
     }
+
+    .update {
+      line-height: 14px;
+      margin-top: 24px;
+      color: #777;
+      font-style: italic;
+
+      a {
+        font-weight: bold;
+        color: #777;
+      }
+    }
   }
 }
 
