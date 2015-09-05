@@ -207,5 +207,10 @@
     border-radius: 3px;
     border: 1px solid #d5c9a9;
     border-bottom-width: 2px;
+    color: #554a2a;
+
+    &:hover {
+      background: rgb(253, 244, 197);
+    }
   }
 }
