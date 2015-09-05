@@ -45,12 +45,11 @@ $(document).ready(function() {
     }
   });
 
-  // $('.gold-container').mouseenter(function () {
-    var view = new Reddit.Views.RedditGoldHover();
-    $('.gold-container').append(view.render().$el);
-  // });
+  $('.gold-container').mouseenter(function () {
+    $('.gold-dropdown').css('opacity', 1);
+  });
 
   $('.gold-container').mouseleave(function () {
-    // $('.gold-dropdown').remove()
+    $('.gold-dropdown').css('opacity', 0);
   });
 });
