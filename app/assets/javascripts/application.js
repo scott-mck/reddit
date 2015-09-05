@@ -44,4 +44,13 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
+
+  // $('.gold-container').mouseenter(function () {
+    var view = new Reddit.Views.RedditGoldHover();
+    $('.gold-container').append(view.render().$el);
+  // });
+
+  $('.gold-container').mouseleave(function () {
+    // $('.gold-dropdown').remove()
+  });
 });

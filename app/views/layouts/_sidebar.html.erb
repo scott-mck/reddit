@@ -35,22 +35,24 @@
 
 <div class="ad"></div>
 
-<div class="daily-gold-outer">
-  <div class="daily-gold-inner">
-    daily reddit gold goal
-    <div class="gold-progress">
-      <span class="percentage">
-        <%= get_gold_progress %>
-      </span>
+<div class="gold-container">
+  <div class="daily-gold-outer">
+    <div class="daily-gold-inner">
+      daily reddit gold goal
+      <div class="gold-progress">
+        <span class="percentage">
+          <%= get_gold_progress %>
+        </span>
 
-      <div class="bar">
-        <div class="progress-bar" style="width:<%= get_gold_progress %>;"></div>
+        <div class="bar">
+          <div class="progress-bar" style="width:<%= get_gold_progress %>;"></div>
+        </div>
       </div>
-    </div>
 
-    <a href="#">
-      <div class="help-support">
-        help support reddit
-      </div></a>
+      <a href="#">
+        <div class="help-support">
+          help support reddit
+        </div></a>
+    </div>
   </div>
 </div>
