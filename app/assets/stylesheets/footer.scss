@@ -1,0 +1,37 @@
+#footer {
+  margin-bottom: 1000px;
+  .footer-outer-box {
+    display: table;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid #F0F0F0;
+    border-radius: 8px;
+
+    .footer-section {
+      float: left;
+      color: #777;
+
+      ul {
+        padding: 0px 20px 0px 20px;
+        border-left: 1px solid #E0E0E0;
+      }
+
+      &:first-child ul {
+        padding-left: 0px;
+        border: none;
+      }
+
+      h3 {
+        margin: 0px 0px 5px 0px;
+        white-space: nowrap;
+        font-size: 18px;
+      }
+
+      li {
+        list-style-type: none;
+        font-size: 13px;
+        color: #369;
+      }
+    }
+  }
+}

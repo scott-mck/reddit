@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module ApplicationHelper
   def auth_token
     "<input type='hidden'

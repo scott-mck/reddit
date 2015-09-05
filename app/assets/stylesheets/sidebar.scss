@@ -183,10 +183,10 @@
 
   .progress-bar {
     position: absolute;
-    background-color: #f3e287;
     height: 18px;
     border-radius: 10px;
     box-shadow: none;
+    background-image: linear-gradient(to bottom,#fff8ba 0%,#eccf90 100%);
   }
 
   .percentage {
