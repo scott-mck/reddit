@@ -111,7 +111,13 @@
 
     &:hover {
       cursor: pointer;
-      // image color change
+      background-position: 0px -243px;
+      border-color: #879eb4;
+      color: white;
+
+      .submit-pic-right {
+        background-position: -31px -546px;
+      }
     }
   }
 
