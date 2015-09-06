@@ -296,8 +296,31 @@
 
     .yesterday-gold {
       margin-top: 6px;
-      padding: 5px;
+      padding-left: 6px;
+      padding-top: 9px;
       border-top: 1px solid #e2ddcf;
+
+      .gold-progress {
+        opacity: .8;
+        height: 18px;
+      }
+
+      .percentage {
+        margin-right: 7px;
+        font-size: 10px;
+        font-weight: normal;
+        line-height: 14px;
+      }
+
+      .bar {
+        height: 14px;
+        margin-left: 1px;
+        margin-top: -2px;
+      }
+
+      .progress-bar {
+        height: 12px;
+      }
     }
   }
 }
