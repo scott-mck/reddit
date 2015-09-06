@@ -45,13 +45,23 @@ $(document).ready(function() {
     }
   });
 
-  // $('.gold-container').mouseenter(function () {
-  //   $('.gold-dropdown').css('opacity', 1);
-  //   $('.gold-dropdown').css('margin-top', '5px');
-  // });
-  //
-  // $('.gold-container').mouseleave(function () {
-  //   $('.gold-dropdown').css('opacity', 0);
-  //   $('.gold-dropdown').css('margin-top', '0px');
-  // });
+  $('.gold-container').mouseenter(function () {
+    if (window.goldHideId) {
+      clearTimeout(window.goldHideId);
+    }
+    window.goldShowId = setTimeout(function (){
+      $('.gold-dropdown').css('opacity', 1);
+      $('.gold-dropdown').css('margin-top', '5px');
+    }, 200);
+  });
+
+  $('.gold-container').mouseleave(function () {
+    if (window.goldShowId) {
+      clearTimeout(window.goldShowId);
+    }
+    window.goldHideId = setTimeout(function () {
+      $('.gold-dropdown').css('opacity', 0);
+      $('.gold-dropdown').css('margin-top', '0px');
+    }, 1000);
+  });
 });
