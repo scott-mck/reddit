@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module ApplicationHelper
   def auth_token
     "<input type='hidden'
@@ -27,12 +25,5 @@ module ApplicationHelper
        philosophy photoshopbattles pics science showerthoughts space sports
        television tifu todayilearned twoxchromosomes upliftingnews videos
        worldnews videos worldnews writingprompts)
-  end
-
-  def get_gold_progress # TODO: make this async somehow (maybe?)
-    gold = Nokogiri::HTML(open('https://www.reddit.com')).css('.goldvertisement')
-    current = gold.css('.progress').css('p')[0].text
-    yesterday = gold.css('.history').css('.progress').css('p')[0].text
-    [current, yesterday]
   end
 end

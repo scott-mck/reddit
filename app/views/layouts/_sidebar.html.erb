@@ -42,11 +42,11 @@
 
       <div class="gold-progress">
         <span class="percentage">
-          <%= get_gold_progress[0] %>
+          <%= @data[:gold_progress] %>
         </span>
 
         <div class="bar">
-          <div class="progress-bar" style="width: <%= get_gold_progress[0] %>;">
+          <div class="progress-bar" style="width: <%= @data[:gold_progress] %>;">
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
     <div class="update">
       This daily goal updates every 10 minutes and is reset at midnight
       <a href="#">Pacific Time</a>
-      (33 minutes from now). <!-- TODO: make this dynammic -->
+      <%= @data[:time_to_midnight] %>
     </div>
 
     <div class="yesterday-gold">
@@ -93,11 +93,11 @@
 
       <div class="gold-progress">
         <span class="percentage">
-          <%= get_gold_progress[1] %>
+          <%= @data[:prev_gold_progress] %>
         </span>
 
         <div class="bar">
-          <div class="progress-bar" style="width: <%= get_gold_progress[1] %>;">
+          <div class="progress-bar" style="width: <%= @data[:prev_gold_progress] %>;">
           </div>
         </div>
       </div>

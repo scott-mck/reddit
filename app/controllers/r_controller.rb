@@ -8,6 +8,7 @@
 
 class RController < ApplicationController
   def index
+    @data = get_reddit_html
     @subreddit = '/r/' + params[:subreddit] if params[:subreddit]
   end
 
