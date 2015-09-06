@@ -50,6 +50,7 @@ $(document).ready(function() {
       clearTimeout(window.goldHideId);
     }
     window.goldShowId = setTimeout(function (){
+      $('.gold-dropdown').css('visibility', 'visible');
       $('.gold-dropdown').css('opacity', 1);
       $('.gold-dropdown').css('margin-top', '5px');
     }, 200);
@@ -60,8 +61,9 @@ $(document).ready(function() {
       clearTimeout(window.goldShowId);
     }
     window.goldHideId = setTimeout(function () {
+      $('.gold-dropdown').css('visibility', 'hidden');
       $('.gold-dropdown').css('opacity', 0);
       $('.gold-dropdown').css('margin-top', '0px');
-    }, 1000);
+    }, 800);
   });
 });
