@@ -147,30 +147,6 @@
       }
     }
   }
-
-  &.sponsored {
-    position: relative;
-    margin-top: 7px;
-    margin-left: 5px;
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    background: #F8F8F8;
-    border: 1px solid gray;
-    min-height: 85px;
-
-    .ranks {
-      display: none;
-    }
-
-    .votes {
-      margin-left: 3px;
-    }
-
-    &:hover:after {
-      cursor: help;
-    }
-  }
 }
 
 .view-more {
@@ -206,5 +182,34 @@
       background: #f0f0f0;
       border: 1px solid #82A6C9;
     }
+  }
+}
+
+.sponsored {
+  position: relative;
+  margin-top: 7px;
+  margin-left: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  background: #F8F8F8;
+  border: 1px solid gray;
+  min-height: 85px;
+
+  .votes {
+    margin-left: 3px;
+  }
+
+  .picture {
+    float: left;
+
+    img {
+      width: 70px;
+      height: auto;
+    }
+  }
+
+  &:hover:after {
+    cursor: help;
   }
 }

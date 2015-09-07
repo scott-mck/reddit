@@ -14,7 +14,7 @@ window.Reddit = {
         dataType: 'jsonp',
         jsonp: 'jsonp',
         success: function () {
-          view = new Reddit.Views.PostsIndexItem({
+          view = new Reddit.Views.SponsoredPost({
             model: sponsoredPost.first(),
           });
           $('#sponsored').append(view.render().$el.addClass('sponsored'));
@@ -59,7 +59,7 @@ window.Reddit = {
           $('#posts').append(view.render().$el).append(clearDiv);
         });
 
-        // change url from /r/random to the fetched subreddit
+        // change address bar from /r/random to the fetched subreddit
         // TODO: pressing 'back' does nothing but change address to /r/random
         if (window.location.pathname === '/r/random') {
           window.history.pushState(
