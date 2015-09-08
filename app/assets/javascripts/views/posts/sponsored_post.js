@@ -1,6 +1,14 @@
 Reddit.Views.SponsoredPost = Backbone.View.extend({
   template: JST['posts/sponsored'],
   className: 'posts-index-item',
+  events: {
+    'mouseenter .whats-this': 'showDescription',
+    'mouseleave .whats-this': 'hideDescription'
+  },
+
+  hideDescription: function () {
+    this.$('.whats-this-description').css('visibility', 'hidden');
+  },
 
   render: function () {
     var defaults = ['self', 'nsfw', 'default'];
@@ -33,5 +41,10 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  showDescription: function () {
+    this.$('.whats-this-description').css('visibility', 'visible');
+    this.$('.whats-this-description').css('opacity', 1);
   }
 });
