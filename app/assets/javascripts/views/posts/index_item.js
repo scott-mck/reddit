@@ -15,18 +15,27 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     var defaults = ['self', 'nsfw', 'default'];
     var thumbnail;
     var paddingLeft;
+    var score;
+
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       thumbnail = 'https://www.reddit.com/static/self_default2.png';
-      paddingLeft = '152px;';
+      paddingLeft = '151px;';
     } else if (this.model.get('data').thumbnail !== '') {
       thumbnail = this.model.get('data').thumbnail;
-      paddingLeft = '152px;';
+      paddingLeft = '151px;';
     } else {
       paddingLeft = '76px';
     }
 
+    if (this.model.get('data').hide_score) {
+      score = '•';
+    } else {
+      score = this.model.get('data').score;
+    }
+
     var content = this.template({
       post: this.model,
+      score: score,
       thumbnail: thumbnail,
       paddingLeft: paddingLeft,
       index: this.index,

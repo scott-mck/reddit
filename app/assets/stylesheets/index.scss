@@ -83,11 +83,18 @@
         cursor: pointer;
       }
     }
+
+    img:first-child {
+      margin-top: 2px;
+    }
+
+    img:last-child {
+      margin-bottom: 1px;
+    }
   }
 
   .picture {
     float: left;
-    margin-right: 3px;
 
     img {
       width: 70px;
@@ -194,7 +201,7 @@
   padding-bottom: 10px;
   background: #F8F8F8;
   border: 1px solid gray;
-  min-height: 85px;
+  min-height: 84px;
 
   .votes {
     margin-left: 20px;
@@ -209,6 +216,14 @@
       display: block;
       margin: auto;
     }
+
+    img:first-child {
+      margin-top: 2px;
+    }
+
+    img:last-child {
+      margin-top: 1px;
+    }
   }
 
   .picture {
@@ -220,7 +235,15 @@
     }
   }
 
-  &:hover:after {
-    cursor: help;
+  .whats-this {
+    position: absolute;
+    right: 4px;
+    bottom: 5px;
+    font-size: x-small;
+    color: #369;
+
+    &:hover {
+      cursor: help;
+    }
   }
 }
