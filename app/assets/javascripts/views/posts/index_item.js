@@ -2,6 +2,7 @@
 // TODO: link title links to real reddit post
 // TODO: user links to actual user's page
 // TODO: change thumbnails to nsfw thumbnail
+// TODO: add embedded videos and pictures
 
 Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],

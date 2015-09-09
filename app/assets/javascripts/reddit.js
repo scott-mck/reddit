@@ -1,5 +1,3 @@
-// TODO: Make a new view for sponsored post
-
 window.Reddit = {
   Models: {},
   Collections: {},
