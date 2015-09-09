@@ -247,6 +247,27 @@
     }
   }
 
+  .next, .prev {
+    position: absolute;
+    background-image: url('http://creesch.github.io/reddit-declutter/sprite-reddit.png');
+    background-position: -48px -537px;
+    border: 1px solid #B3B3B3;
+    top: 5px;
+    right: 5px;
+    width: 21px;
+    height: 21px;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid #336699;
+    }
+  }
+
+  .prev {
+    right: 31px;
+    background-position: -68px -537px;
+  }
+
   .whats-this-description {
     position: absolute;
     transition: 200ms;
