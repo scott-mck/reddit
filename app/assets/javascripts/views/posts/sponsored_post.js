@@ -3,11 +3,21 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
   className: 'posts-index-item',
   events: {
     'mouseenter .whats-this': 'showDescription',
-    'mouseleave .whats-this': 'hideDescription'
+    'mouseleave .whats-this': 'hideDescription',
+    'mouseenter .whats-this-description': 'showDescription',
+    'mouseleave .whats-this-description': 'hideDescription'
   },
 
   hideDescription: function () {
-    this.$('.whats-this-description').css('visibility', 'hidden');
+    if (window.showWhatsThisId) {
+      clearTimeout(window.showWhatsThisId);
+    }
+
+    window.hideWhatsThisId = setTimeout(function () {
+      this.$('.whats-this-description').css('visibility', 'hidden');
+      this.$('.whats-this-description').css('opacity', 0);
+      this.$('.whats-this-description').css('bottom', '-54px');
+    }, 800);
   },
 
   render: function () {
@@ -44,7 +54,14 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
   },
 
   showDescription: function () {
-    this.$('.whats-this-description').css('visibility', 'visible');
-    this.$('.whats-this-description').css('opacity', 1);
+    if (window.hideWhatsThisId) {
+      clearTimeout(window.hideWhatsThisId)
+    }
+
+    window.showWhatsThisId = setTimeout(function () {
+      this.$('.whats-this-description').css('visibility', 'visible');
+      this.$('.whats-this-description').css('opacity', 1);
+      this.$('.whats-this-description').css('bottom', '-59px');
+    }, 200);
   }
 });
