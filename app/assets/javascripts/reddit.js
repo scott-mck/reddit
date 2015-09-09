@@ -8,14 +8,15 @@ window.Reddit = {
   initialize: function() {
     // sponsored post
     if (window.location.pathname.indexOf('/r/') === -1) {
-      var sponsoredPost = new Reddit.Collections.Posts();
-      sponsoredPost.fetch({
+      var sponsoredPosts = new Reddit.Collections.Posts();
+      sponsoredPosts.fetch({
         url: 'https://www.reddit.com/rising.json',
         dataType: 'jsonp',
         jsonp: 'jsonp',
         success: function () {
           view = new Reddit.Views.SponsoredPost({
-            model: sponsoredPost.first(),
+            collection: sponsoredPosts.first(10),
+            model: sponsoredPosts.first()
           });
           $('#sponsored').append(view.render().$el.addClass('sponsored'));
         }
