@@ -34,16 +34,18 @@
 }
 
 .separator {
-  margin-left: 1px;
   font-size: 8px;
-  font-weight: 500;
+  font-weight: bold;
   color: gray;
+
+  &.pipe {
+    margin: 2px;
+  }
 }
 
 .my-subreddits {
-  margin-right: 17px;
+  margin-right: 15px;
   font-size: 9px;
-  padding-left: 1px;
   padding-right: 1px;
 
   &:hover {
@@ -102,7 +104,7 @@
   border-bottom: 1px solid #5f99cf;
 
   img {
-    margin: 2px;
+    margin: 2px 2px 2px 0px;
     width: 120px;
     height: 40px;
   }

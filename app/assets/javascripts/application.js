@@ -34,9 +34,9 @@ $(document).ready(function() {
       jsonp: 'jsonp',
       success: function (resp) {
         var sub = resp.data.children[0].data.subreddit;
-        window.location = '/r/' + sub;  
+        window.location = '/r/' + sub;
       }
-    })
+    });
   });
 
   $('.my-subreddits').click(function () {
