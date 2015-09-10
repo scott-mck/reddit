@@ -6,6 +6,7 @@
 class RController < ApplicationController
   def index
     @data = get_reddit_html
-    @subreddit = '/r/' + params[:subreddit] if params[:subreddit]
+    @subreddit = params[:subreddit] ? "/r/#{params[:subreddit]}/" : "/"
+    @sort = params[:sort]
   end
 end
