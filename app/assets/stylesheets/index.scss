@@ -77,7 +77,7 @@
     width: 50px;
     text-align: center;
 
-    img {
+    img.arrow {
       display: block;
       margin: auto;
 
@@ -86,11 +86,12 @@
       }
     }
 
-    img:first-child {
+    img.up-child {
       margin-top: 2px;
     }
 
-    img:last-child {
+    img.down-child {
+      margin-top: 1px;
       margin-bottom: 1px;
     }
   }
@@ -218,17 +219,17 @@
     font-size: small;
     color: #c6c6c6;
 
-    img {
+    img.arrow {
       display: block;
       margin: auto;
     }
 
-    img:first-child {
+    img.up {
       margin-top: 2px;
     }
 
-    img:last-child {
-      margin-top: 1px;
+    img.down {
+      margin-top: 2px;
     }
   }
 
