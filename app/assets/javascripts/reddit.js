@@ -23,7 +23,6 @@ window.Reddit = {
 
     // trending subreddits
     if (window.location.pathname === '/') {
-      $('#sponsored').after('<div id="trending-subreddits">');
       $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
         dataType: 'jsonp',
@@ -38,7 +37,7 @@ window.Reddit = {
             numComments: trendingPost.num_comments,
             permalink: trendingPost.permalink
           });
-          $('#trending-subreddits').append(view.render().$el);
+          $('#sponsored').after(view.render().$el);
         }
       });
     }

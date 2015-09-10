@@ -1,5 +1,6 @@
 Reddit.Views.TrendingSubreddits = Backbone.View.extend({
   template: JST['trending_subreddits'],
+  id: 'trending-subreddits',
 
   initialize: function (options) {
     this.subs = options.subs;

@@ -7,13 +7,13 @@
       <%= subreddit %></a>
   <% }) %>
 
-    <% if (numComments == 1) { %>
-      <a href="https://www.reddit.com<%= permalink %>"
-         class="comments">
-        1 comment</a>
-    <% } else { %>
+  <% if (numComments == 1) { %>
     <a href="https://www.reddit.com<%= permalink %>"
        class="comments">
-      <%= numComments %> comments</a>
-    <% } %>
+      1 comment</a>
+  <% } else { %>
+  <a href="https://www.reddit.com<%= permalink %>"
+     class="comments">
+    <%= numComments %> comments</a>
+  <% } %>
 </div>
