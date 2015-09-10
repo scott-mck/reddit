@@ -115,13 +115,13 @@
     position: absolute;
     margin: 0px;
     padding: 0px;
-    left: 135px;
+    left: 132px;
     bottom: -1px;
   }
 
   li.tab {
     float: left;
-    height: 18px;
+    height: 19px;
     margin-right: 6px;
     padding-top: 3px;
     padding-right: 6px;
@@ -132,6 +132,7 @@
     font-size: 12px;
     list-style-type: none;
     line-height: 1.1;
+    border-top: 1px solid #cee3f8;
     border-bottom: 1px solid #5f99cf;
 
     a {
