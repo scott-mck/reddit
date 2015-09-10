@@ -27,6 +27,18 @@ $(document).ready(function() {
     }
   });
 
+  $('#random').click(function () {
+    $.ajax({
+      url: 'https://www.reddit.com/r/random.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function (resp) {
+        var sub = resp.data.children[0].data.subreddit;
+        window.location = '/r/' + sub;  
+      }
+    })
+  });
+
   $('.my-subreddits').click(function () {
     if ($('.my-subreddits-dropdown').css('display') === 'none') {
       $('.my-subreddits-dropdown').css('display', 'block');

@@ -58,16 +58,6 @@ window.Reddit = {
           var clearDiv = $("<div style='clear: left;'>");
           $('#posts').append(view.render().$el).append(clearDiv);
         });
-
-        // change address bar from /r/random to the fetched subreddit
-        // TODO: pressing 'back' does nothing but change address to /r/random
-        if (window.location.pathname === '/r/random') {
-          window.history.pushState(
-            "something",
-            "Title",
-            resp.data.children[0].data.subreddit
-          );
-        }
       }
     });
 
