@@ -33,12 +33,15 @@
 }
 
 .separator {
-  font-size: 8px;
-  font-weight: bold;
+  letter-spacing: .05em;
+  margin-right: -1px;
+  font-size: 9px;
+  font-weight: 500;
   color: gray;
 
   &.pipe {
-    margin: 2px;
+    margin-left: 3px;
+    margin-right: 2px;
   }
 }
 
@@ -162,7 +165,7 @@
     background: #EFF7FF;
     color: gray;
     padding: 4px;
-    border-top-left-radius: 6px;
+    border-top-left-radius: 7px;
 
     a {
       color: #369;
