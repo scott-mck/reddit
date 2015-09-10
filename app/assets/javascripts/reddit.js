@@ -23,6 +23,7 @@ window.Reddit = {
 
     // trending subreddits
     if (window.location.pathname === '/') {
+      $('#sponsored').after('<div id="trending-subreddits">');
       $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
         dataType: 'jsonp',
