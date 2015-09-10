@@ -4,11 +4,19 @@
     <a href="<%= @subreddit %>">hot</a>
   </li>
 
-  <% %w(new rising controversial top gilded wiki promoted).each do |tab| %>
+  <% %w(new rising controversial top).each do |tab| %>
     <li class="tab <%= 'selected' if @sort == tab %>">
       <a href="<%= @subreddit %><%= tab %>"><%= tab %></a>
     </li>
   <% end %>
+
+  <!-- TODO: these links to real reddit page -->
+  <% %w(gilded wiki promoted).each do |tab| %>
+    <li class="tab <%= 'selected' if @sort == tab %>">
+      <a href="https://www.reddit.com<%= @subreddit %><%= tab %>"><%= tab %></a>
+    </li>
+  <% end %>
+  
 </ul>
 
 <div class="join-invite">
