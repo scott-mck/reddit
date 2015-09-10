@@ -1,5 +1,3 @@
-// TODO: possibly move logic to backbone views
-
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializejson
