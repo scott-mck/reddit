@@ -1,5 +1,22 @@
 <!-- TODO: add 'links from past month/year' -->
 
+<% if @time_sort %>
+  <div class="time-sort">
+    links from: <span class="times">past 24 hours</span>
+    <span style="color: gray;">▼</span>
+
+    <ul class="time-options">
+      <li class="option">past hour</li>
+      <li class="option">past week</li>
+      <li class="option">past month</li>
+      <li class="option">past year</li>
+      <li class="option">all time</li>
+    </ul>
+  </div>
+
+  <div class="time-sort-border"></div>
+<% end %>
+
 <div id="sponsored"></div>
 <div id="posts"></div>
 <div class="view-more">
