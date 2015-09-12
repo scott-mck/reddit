@@ -16,12 +16,20 @@
 
 $(document).ready(function() {
   $(document).mouseup(function (event) {
-    var mySubreddits = $('.my-subreddits');
-    var container = $('.my-subreddits-dropdown');
+    var $ul = [
+      $('.my-subreddits'),
+      $('.time-dropdown')
+    ];
+    var $li = [
+      $('.my-subreddits-dropdown'),
+      $('.time-options')
+    ];
 
-    if (!container.is(event.target) && !mySubreddits.is(event.target) &&
-          container.has(event.target).length === 0) {
-      container.css('display', 'none');
+    for (var i = 0; i < $ul.length; i++) {
+      if (!$ul[i].is(event.target) && !$li[i].is(event.target) &&
+          $li[i].has(event.target).length === 0) {
+        $li[i].css('display', 'none');
+      }
     }
   });
 
