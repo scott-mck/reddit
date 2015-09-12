@@ -25,6 +25,14 @@ $(document).ready(function() {
     }
   });
 
+  $('.my-subreddits').click(function () {
+    if ($('.my-subreddits-dropdown').css('display') === 'none') {
+      $('.my-subreddits-dropdown').css('display', 'block');
+    } else {
+      $('.my-subreddits-dropdown').css('display', 'none');
+    }
+  });
+
   $('#random').click(function () {
     $.ajax({
       url: 'https://www.reddit.com/r/random.json',
@@ -35,14 +43,6 @@ $(document).ready(function() {
         window.location = '/r/' + sub;
       }
     });
-  });
-
-  $('.my-subreddits').click(function () {
-    if ($('.my-subreddits-dropdown').css('display') === 'none') {
-      $('.my-subreddits-dropdown').css('display', 'block');
-    } else {
-      $('.my-subreddits-dropdown').css('display', 'none');
-    }
   });
 
   $('.gold-container').mouseenter(function () {
