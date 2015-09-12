@@ -43,7 +43,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.time-list').click(function () {
+  $('.time-list').click(function () { // TODO: page-specificify
     if ($('.time-dropdown').css('display') === 'none') {
       $('.time-dropdown').css('display', 'block');
     } else {
