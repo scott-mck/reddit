@@ -33,6 +33,14 @@ $(document).ready(function() {
     }
   });
 
+  $('.time-dropdown').click(function () {
+    if ($('.time-options').css('display') === 'none') {
+      $('.time-options').css('display', 'block');
+    } else {
+      $('.time-options').css('display', 'none');
+    }
+  });
+
   $('#random').click(function () {
     $.ajax({
       url: 'https://www.reddit.com/r/random.json',
