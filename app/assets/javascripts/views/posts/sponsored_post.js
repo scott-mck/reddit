@@ -49,7 +49,7 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
     }
 
     var content = this.template({
-      thumbnail: this.model.get('data').thumbnail,
+      thumbnail: thumbnail,
       score: score,
       post: this.model,
       paddingLeft: paddingLeft,
