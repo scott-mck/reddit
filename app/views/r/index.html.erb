@@ -1,9 +1,30 @@
-<% if @time_sort %>
+<% if @show_time_sort %>
   <div class="time-sort">
-    links from: <span class="time-dropdown">past 24 hours</span>
+    links from:
+    <span class="time-dropdown">
+      <% if @t == 'all' %>
+        <%= time_convert[@t.to_sym] %>
+      <% else %>
+        past <%= time_convert[@t.to_sym] %>
+      <% end %>
+    </span>
     <span style="color: gray;">▼</span>
 
     <ul class="time-options">
+      <% %w(hour day week month year all).each do |time| %>
+        <% next if @t == time %>
+        <li class="option">
+          <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=<%= time %>">
+            <% if time == 'all' %>
+              <%= time_convert[time.to_sym] %>
+            <% else %>
+              past <%= time_convert[time.to_sym] %>
+            <% end %>
+          </a>
+        </li>
+      <% end %>
+
+      <!--
       <li class="option">
         <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=hour">
           past hour
@@ -29,6 +50,7 @@
           all time
         </a>
       </li>
+    -->
     </ul>
   </div>
 
