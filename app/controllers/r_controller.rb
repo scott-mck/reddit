@@ -1,6 +1,5 @@
 # TODO: Create log-in modal
 # TODO: Fetch correct sponsored posts
-# TODO: Allow for pagination
 
 class RController < ApplicationController
   def index
