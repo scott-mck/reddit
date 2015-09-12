@@ -1,4 +1,4 @@
-<% if @show_time_sort %>
+<% if @show_time_sort %> <!-- TODO: make this a partial -->
   <div class="time-sort">
     links from:
     <span class="time-list">
@@ -24,18 +24,11 @@
           </a>
         </li>
       <% end %>
+    </ul>
+  </div>
 
   <div class="time-sort-border"></div>
 <% end %>
 
 <div id="sponsored"></div>
 <div id="posts"></div>
-<div class="view-more">
-  view more:
-  
-  <a href="#"><div class="next">next ›</div></a>
-  or try a
-  <a href="/r/random">
-    <div class="random-subreddit">random subreddit</div>
-  </a>
-</div>

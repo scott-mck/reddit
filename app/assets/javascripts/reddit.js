@@ -60,6 +60,12 @@ window.Reddit = {
           var clearDiv = $("<div style='clear: left;'>");
           $('#posts').append(view.render().$el).append(clearDiv);
         });
+
+        var view = new Reddit.Views.ViewMore({
+          after: resp.data.after,
+          before: resp.data.before
+        });
+        $('#main').append(view.render().$el);
       }
     });
 
