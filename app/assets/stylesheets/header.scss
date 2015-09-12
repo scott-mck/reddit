@@ -71,9 +71,7 @@
   margin-top: -2px;
   min-width: 80px;
   background-color: white;
-  border-left: 1px solid #808080;
-  border-right: 1px solid #808080;
-  border-bottom: 1px solid #808080;
+  border: 1px solid #808080;
   color: #369;
 
   a {
@@ -84,9 +82,11 @@
   }
 
   .subreddit-index-item {
-    padding-left: 3px;
-    padding-top: 1px;
-    padding-bottom: 2px;
+    padding: 1px 3px 1px 3px;
+
+    &:first-child {
+      padding-top: 2px;
+    }
 
     &:hover {
       background-color: #c7def7;
