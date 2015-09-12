@@ -72,8 +72,24 @@
     list-style-type: none;
     z-index: 10000;
     background-color: white;
-    border: 1px solid black;
-    padding: 2px 3px;
+    border: 1px solid gray;
+    padding: 0px;
+  }
+
+  li.option {
+    padding: 2px 2px 1px 3px;
+
+    a {
+      color: #369;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      background-color: #c7def7;
+      cursor: pointer;
+    }
   }
 }
 
