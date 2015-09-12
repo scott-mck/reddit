@@ -15,20 +15,22 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(document).mouseup(function (event) {
-    var $ul = [
-      $('.my-subreddits'),
-      $('.time-dropdown')
-    ];
-    var $li = [
-      $('.my-subreddits-dropdown'),
-      $('.time-options')
-    ];
+  $(document).mouseup(function (e) {
+    var $event = $(e.target);
 
-    for (var i = 0; i < $ul.length; i++) {
-      if (!$ul[i].is(event.target) && !$li[i].is(event.target) &&
-          $li[i].has(event.target).length === 0) {
-        $li[i].css('display', 'none');
+    // clickDiv keys are showing or hiding divs
+    // values are the corresponding shown or hidden divs
+    var clickDivs = {
+      'my-subreddits': '.my-subreddits-dropdown',
+      'time-list': '.time-dropdown'
+    };
+
+    /* hide all clickDivs values on click, unless $event or its parent
+       is the corresponding showing or hiding div */
+    for (var i = 0; i < _.keys(clickDivs).length; i++) {
+      if ($event.attr('class') !== _.keys(clickDivs)[i] &&
+          $event.parent().attr('class') !== _.keys(clickDivs)[i]) {
+        $(clickDivs[_.keys(clickDivs)[i]]).css('display', 'none');
       }
     }
   });
@@ -41,11 +43,11 @@ $(document).ready(function() {
     }
   });
 
-  $('.time-dropdown').click(function () {
-    if ($('.time-options').css('display') === 'none') {
-      $('.time-options').css('display', 'block');
+  $('.time-list').click(function () {
+    if ($('.time-dropdown').css('display') === 'none') {
+      $('.time-dropdown').css('display', 'block');
     } else {
-      $('.time-options').css('display', 'none');
+      $('.time-dropdown').css('display', 'none');
     }
   });
 
