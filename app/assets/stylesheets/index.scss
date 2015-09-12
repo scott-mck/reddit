@@ -218,10 +218,20 @@
   font-size: larger;
   color: gray;
 
+  .bar {
+    display: inline-block;
+    margin-left: 2px;
+    margin-bottom: -3px;
+    margin-right: 1px;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+  }
+
   .next {
     display: inline-block;
     margin-right: 5px;
-    padding: 1px 4px 1px 4px;
+    padding: 1px 4px 1px 5px;
     background: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -232,6 +242,11 @@
     &:hover {
       border: 1px solid #82A6C9;
     }
+  }
+
+  .prev {
+    margin-right: 0px;
+    padding-left: 4px;
   }
 
   .random-subreddit {
