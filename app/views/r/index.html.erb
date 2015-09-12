@@ -1,16 +1,34 @@
-<!-- TODO: add 'links from past month/year' -->
-
 <% if @time_sort %>
   <div class="time-sort">
     links from: <span class="time-dropdown">past 24 hours</span>
     <span style="color: gray;">▼</span>
 
     <ul class="time-options">
-      <li class="option"><a href="#">past hour</a></li>
-      <li class="option"><a href="#">past week</a></li>
-      <li class="option"><a href="#">past month</a></li>
-      <li class="option"><a href="#">past year</a></li>
-      <li class="option"><a href="#">all time</a></li>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=hour">
+          past hour
+        </a>
+      </li>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=week">
+          past week
+        </a>
+      </li>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=month">
+          past month
+        </a>
+      </li>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=year">
+          past year
+        </a>
+      </li>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=all">
+          all time
+        </a>
+      </li>
     </ul>
   </div>
 

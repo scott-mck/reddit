@@ -21,7 +21,7 @@ window.Reddit = {
       });
     }
 
-    // trending subreddits
+    // trending subreddits TODO: make this page-specific
     if (window.location.pathname === '/') {
       $.ajax({
         url: 'https://reddit.com/r/trendingsubreddits.json',
@@ -45,7 +45,10 @@ window.Reddit = {
     // main posts
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
-      url: 'https://www.reddit.com' + window.location.pathname + '.json',
+      url: 'https://www.reddit.com'
+            + window.location.pathname
+            + '.json'
+            + window.location.search,
       dataType: 'jsonp',
       jsonp: 'jsonp',
       success: function (collection, resp) {
