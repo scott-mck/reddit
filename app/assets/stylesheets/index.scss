@@ -59,13 +59,13 @@
   cursor: default;
 
 
-  span.time-link {
+  span.time {
     color: gray;
     font-weight: bold;
     text-decoration: underline;
   }
 
-  ul.time-options {
+  ul.time-dropdown {
     position: absolute;
     display: none;
     top: 22px;
