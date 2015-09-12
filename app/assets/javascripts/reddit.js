@@ -52,10 +52,16 @@ window.Reddit = {
       dataType: 'jsonp',
       jsonp: 'jsonp',
       success: function (collection, resp) {
+        var count = window.location.search.match(/count=(\d+)/) || 0;
+        if (count) {
+          count = count[1];
+        }
+        count = parseInt(count);
+        
         posts.each(function (post) {
            view = new Reddit.Views.PostsIndexItem({
             model: post,
-            index: posts.indexOf(post) + 1
+            index: count + posts.indexOf(post) + 1
           });
           var clearDiv = $("<div style='clear: left;'>");
           $('#posts').append(view.render().$el).append(clearDiv);
