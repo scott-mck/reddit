@@ -168,13 +168,18 @@
     padding: 4px;
     border-top-left-radius: 7px;
 
-    a {
+    a.login {
       color: #369;
       text-decoration: none;
     }
 
     a.language {
       font-weight: bold;
+      color: #369;
+    }
+
+    a:hover {
+      cursor: pointer;
     }
   }
 }

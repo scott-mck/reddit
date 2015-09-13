@@ -43,7 +43,7 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
-  
+
   $('#random').click(function () {
     $.ajax({
       url: 'https://www.reddit.com/r/random.json',
@@ -54,6 +54,11 @@ $(document).ready(function() {
         window.location = '/r/' + sub;
       }
     });
+  });
+
+  $('a.login').click(function () {
+    var view = new Reddit.Views.ModalBackdrop();
+    $('body').prepend(view.render().$el);
   });
 
   $('.gold-container').mouseenter(function () {
