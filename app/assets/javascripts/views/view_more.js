@@ -10,19 +10,13 @@ Reddit.Views.ViewMore = Backbone.View.extend({
   },
 
   render: function () {
-    var query = window.location.search;
-    var count = query.match(/(&*count=\d+)/) || [''];
-    var after = query.match(/(&*after=\w+)/) || [''];
-    var before = query.match(/(&*before=\w+)/) || [''];
-    query = query.replace(count[count.length - 1], '');
-    query = query.replace(after[after.length - 1], '');
-    query = query.replace(before[before.length - 1], '');
-
+    var query = this.replaceQueryString(window.location.search);
     if (query === '' || query === '?') {
       query = '?';
     } else {
       query += '&';
     }
+    
     var content = this.template({
       currentUrl: window.location.pathname + query,
       after: this.after,
@@ -32,5 +26,16 @@ Reddit.Views.ViewMore = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  replaceQueryString: function (query) {
+    var string = query;
+    var count = string.match(/(&*count=\d+)/) || [''];
+    var after = string.match(/(&*after=\w+)/) || [''];
+    var before = string.match(/(&*before=\w+)/) || [''];
+    string = string.replace(count[count.length - 1], '');
+    string = string.replace(after[after.length - 1], '');
+    string = string.replace(before[before.length - 1], '');
+    return string
   }
 });
