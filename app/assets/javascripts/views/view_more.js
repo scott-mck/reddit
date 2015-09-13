@@ -8,14 +8,21 @@ Reddit.Views.ViewMore = Backbone.View.extend({
   },
 
   render: function () {
-    var searchQuery;
-    if (window.location.search === '') {
-      searchQuery = '?';
+    var query = window.location.search;
+    var count = query.match(/(&*count=\d+)/) || ['', ''];
+    var after = query.match(/(&*after=\w+)/) || ['', ''];
+    var before = query.match(/(&*before=\w+)/) || ['', ''];
+    query = query.replace(count[1], '');
+    query = query.replace(after[1], '');
+    query = query.replace(before[1], '');
+
+    if (query === '' || query === '?') {
+      query = '?';
     } else {
-      searchQuery = window.location.search + '&';
+      query += '&';
     }
     var content = this.template({
-      currentUrl: window.location.pathname + searchQuery,
+      currentUrl: window.location.pathname + query,
       after: this.after,
       before: this.before
     });
