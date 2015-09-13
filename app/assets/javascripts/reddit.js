@@ -4,7 +4,7 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // sponsored post
+    // sponsored post TODO: make this page specific
     if (window.location.pathname.indexOf('/r/') === -1) {
       var sponsoredPosts = new Reddit.Collections.Posts();
       sponsoredPosts.fetch({
@@ -42,7 +42,7 @@ window.Reddit = {
       });
     }
 
-    // main posts
+    // main posts TODO: make this page-specific
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
       url: 'https://www.reddit.com'
