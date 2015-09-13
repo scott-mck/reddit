@@ -12,7 +12,6 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-//= require_tree .
 
 $(document).ready(function() {
   $(document).mouseup(function (e) {

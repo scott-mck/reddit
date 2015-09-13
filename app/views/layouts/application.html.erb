@@ -3,11 +3,14 @@
 <head>
   <title>Reddit</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application'  %>
+  <% if ['/hot', '/'].include? request.env['PATH_INFO'] %>
+    <%= stylesheet_link_tag    'trending', media: 'all' %>
+    <%= javascript_include_tag 'trending'  %>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <%= render 'layouts/header' %>
   <div id="main">
     <div id="sidebar">
