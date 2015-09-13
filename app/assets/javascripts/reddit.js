@@ -4,23 +4,20 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // sponsored post TODO: make this page specific
-    if (window.location.pathname.indexOf('/r/') === -1) {
-      var sponsoredPosts = new Reddit.Collections.Posts();
-      sponsoredPosts.fetch({
-        url: 'https://www.reddit.com/rising.json',
-        dataType: 'jsonp',
-        jsonp: 'jsonp',
-        success: function () {
-          view = new Reddit.Views.SponsoredPost({
-            collection: sponsoredPosts.first(10),
-            model: sponsoredPosts.first()
-          });
-          $('#sponsored').append(view.render().$el.addClass('sponsored'));
-        }
-      });
-    }
-    
+    var sponsoredPosts = new Reddit.Collections.Posts();
+    sponsoredPosts.fetch({
+      url: 'https://www.reddit.com/rising.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function () {
+        view = new Reddit.Views.SponsoredPost({
+          collection: sponsoredPosts.first(10),
+          model: sponsoredPosts.first()
+        });
+        $('#sponsored').append(view.render().$el.addClass('sponsored'));
+      }
+    });
+
     // main posts TODO: make this page-specific
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
