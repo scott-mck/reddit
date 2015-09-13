@@ -1,14 +1,16 @@
 view more:
 
 <% if (before) { %>
-  <a href="<%= currentUrl %>count=0&before=<%= before %>">
+  <a href="<%= currentUrl %><%= countBefore %>&before=<%= before %>">
     <div class="prev next">‹ prev</div></a>
     <div class="bar"></div>
 <% } %>
 
-<a href="<%= currentUrl %>count=25&after=<%= after %>">
-  <div class="next">next ›</div></a>
-or try a
-<a href="/r/random">
-  <div class="random-subreddit">random subreddit</div>
-</a>
+<% if (after) { %>
+  <a href="<%= currentUrl %><%= countAfter %>&after=<%= after %>">
+    <div class="next">next ›</div></a>
+  or try a
+  <a href="/r/random">
+    <div class="random-subreddit">random subreddit</div>
+  </a>
+<% } %>
