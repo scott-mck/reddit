@@ -1,4 +1,4 @@
-Reddit.Views.ModalBackdrop = Backbone.View.extend({
+Reddit.Views.BackdropModal = Backbone.View.extend({
   template: JST['modal_backdrop'],
   events: {
     'click': 'exit'

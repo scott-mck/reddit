@@ -57,7 +57,7 @@ $(document).ready(function() {
   });
 
   $('a.login').click(function () {
-    var view = new Reddit.Views.ModalBackdrop();
+    var view = new Reddit.Views.BackdropModal();
     $('body').prepend(view.render().$el);
   });
 
