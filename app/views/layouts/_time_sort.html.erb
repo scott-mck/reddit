@@ -1,0 +1,29 @@
+<div class="time-sort">
+  links from:
+  <span class="time-list">
+    <span class="time">
+      <% if @t == 'all' %>
+        <%= time_convert[@t.to_sym] %></span>
+      <% else %>
+        past <%= time_convert[@t.to_sym] %></span>
+      <% end %>
+      <span style="color: gray;">▼</span>
+  </span>
+
+  <ul class="time-dropdown">
+    <% %w(hour day week month year all).each do |time| %>
+      <% next if @t == time %>
+      <li class="option">
+        <a href="<%= @subreddit %><%= @sort %>?sort=controversial&t=<%= time %>">
+          <% if time == 'all' %>
+            <%= time_convert[time.to_sym] %>
+          <% else %>
+            past <%= time_convert[time.to_sym] %>
+          <% end %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="time-sort-border"></div>
