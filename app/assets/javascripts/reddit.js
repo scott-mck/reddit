@@ -4,21 +4,6 @@ window.Reddit = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var sponsoredPosts = new Reddit.Collections.Posts();
-    sponsoredPosts.fetch({
-      url: 'https://www.reddit.com/rising.json',
-      dataType: 'jsonp',
-      jsonp: 'jsonp',
-      success: function () {
-        view = new Reddit.Views.SponsoredPost({
-          collection: sponsoredPosts.first(10),
-          model: sponsoredPosts.first()
-        });
-        $('#sponsored').append(view.render().$el.addClass('sponsored'));
-      }
-    });
-
-    // main posts TODO: make this page-specific
     var posts = new Reddit.Collections.Posts();
     posts.fetch({
       url: 'https://www.reddit.com'
@@ -68,19 +53,6 @@ window.Reddit = {
           countBefore: countBefore
         });
         $('#main').append(view.render().$el);
-      }
-    });
-
-    // advertisement (sidebar)
-    $.ajax({
-      url: 'https://www.reddit.com/r/ads/.json',
-      dataType: 'jsonp',
-      jsonp: 'jsonp',
-      success: function (ad) {
-        var view = new Reddit.Views.Ad({
-          model: ad.data.children[0]
-        });
-        $('#sidebar .ad').append(view.render().$el);
       }
     });
   }

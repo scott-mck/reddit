@@ -12,6 +12,8 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
+//= require sponsored
+//= require get_ad
 
 $(document).ready(function() {
   $(document).mouseup(function (e) {
