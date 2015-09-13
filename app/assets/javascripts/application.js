@@ -43,15 +43,7 @@ $(document).ready(function() {
       $('.my-subreddits-dropdown').css('display', 'none');
     }
   });
-
-  $('.time-list').click(function () { // TODO: page-specificify
-    if ($('.time-dropdown').css('display') === 'none') {
-      $('.time-dropdown').css('display', 'block');
-    } else {
-      $('.time-dropdown').css('display', 'none');
-    }
-  });
-
+  
   $('#random').click(function () {
     $.ajax({
       url: 'https://www.reddit.com/r/random.json',

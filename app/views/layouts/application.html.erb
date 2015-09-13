@@ -4,9 +4,15 @@
   <title>Reddit</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'  %>
+
   <% if ['/hot', '/'].include? request.env['PATH_INFO'] %>
     <%= stylesheet_link_tag    'trending', media: 'all' %>
     <%= javascript_include_tag 'trending'  %>
+  <% end %>
+
+  <% if ['/controversial', '/top'].include? request.env['PATH_INFO'] %>
+    <%= stylesheet_link_tag    'time_list', media: 'all' %>
+    <%= javascript_include_tag 'time_list'  %>
   <% end %>
   <%= csrf_meta_tags %>
 </head>

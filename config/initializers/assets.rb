@@ -2,7 +2,10 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += ['trending.js', 'trending.css']
+Rails.application.config.assets.precompile += [
+  'trending.js', 'trending.css',
+  'time_list.js', 'time_list.css'
+]
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
