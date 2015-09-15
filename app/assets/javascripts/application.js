@@ -22,8 +22,8 @@ function showLoginModal () {
   });
 
   backdrop.click(function () {
-    login.$el.removeClass('login-transition');
-    login.$el.one('transitionend', function () {
+    $('.modal-box').removeClass('modal-transition');
+    $('.modal-box').one('transitionend', function () {
       login.remove();
 
       backdrop.addClass('fade-out');
@@ -40,7 +40,7 @@ function showLoginModal () {
     backdrop.one('transitionend', function () {
       $('body').prepend(login.render().$el);
       setTimeout(function () {
-        login.$el.addClass('login-transition');
+        $('.modal-box').addClass('modal-transition');
       }, 0);
     });
   }, 0);

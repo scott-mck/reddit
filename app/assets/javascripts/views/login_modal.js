@@ -1,6 +1,6 @@
 Reddit.Views.LoginModal = Backbone.View.extend({
   template: JST['login_modal'],
-  className: 'login-modal',
+  className: 'modal-box',
   events: {
     'click .close': 'exit'
   },

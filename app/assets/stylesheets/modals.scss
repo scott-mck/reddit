@@ -12,17 +12,16 @@
   opacity: 0;
 }
 
-.login-transition {
+.modal-transition {
   top: 30px !important;
   opacity: 1 !important;
 }
 
-.login-modal {
-  top: -100px;
+.modal-box {
   opacity: 0;
+  top: -100px;
   transition: 200ms linear;
   position: absolute;
-  display: flex;
   z-index: 200;
   left: 0;
   right: 0;
@@ -33,6 +32,21 @@
   border: 1px solid rgba(0,0,0,0.7);
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.signin-or-login {
+  // position: absolute;
+  display: flex;
+  // z-index: 200;
+  // left: 0;
+  // right: 0;
+  // margin: auto;
+  // padding: 60px;
+  // width: 730px;
+  // background-color: #f8fbfd;
+  // border: 1px solid rgba(0,0,0,0.7);
+  // border-radius: 5px;
+  // box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 
   .close {
     position: absolute;
@@ -94,7 +108,6 @@
   .btn-primary {
     float: right;
     margin-top: 25px;
-    width: 75px;
     height: 30px;
     background-color: #4980ae;
     border-bottom: 2px solid #4270a2;
