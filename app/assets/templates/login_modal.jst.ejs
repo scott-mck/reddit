@@ -1,18 +1,32 @@
-<div>
+<div class="create">
   <div class="title">CREATE A NEW ACCOUNT</div>
 
-  <form class="create">
+  <form>
     <input class="form-control" type="text" name="username" placeholder="choose a username">
     <input class="form-control" type="password" name="password" placeholder="password">
     <input class="form-control" type="password" name="verify" placeholder="verify password">
     <input class="form-control" type="text" name="email" placeholder="email (optional)">
 
-    <input class="check" type="checkbox" name="remember"> remember me<br>
-    <input class="check" type="checkbox" name="mail">
-    get the best of reddit emailed to you once a week.
-    <a href="https://www.reddit.com/newsletter">learn more</a>
+    <input type="checkbox" name="remember">
+    <div class="check">
+       remember me
+    </div>
 
-    <br><br><br>
+    <input type="checkbox" name="mail">
+    <div class="check">
+      get the best of reddit emailed to you once a week.
+      <a href="https://www.reddit.com/newsletter">learn more</a>
+    </div>
+
     <input class="btn btn-primary" type="submit" value="SIGN UP">
   </div>
+</div>
+
+<div class="login">
+  <div class="title">LOG IN</div>
+
+  <form>
+    <input class="form-control" type="text" name="username" placeholder="username">
+    <input class="form-control" type="password" name="password" placeholder="password">
+  </form>
 </div>
