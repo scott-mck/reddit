@@ -103,7 +103,7 @@ $(document).ready(function() {
     });
   });
 
-  $('a.login').click(showLoginModal);
+  $('a.login, .submit-post').click(showLoginModal);
 
   $('.gold-container').mouseenter(function () {
     if (window.goldHideId) {
