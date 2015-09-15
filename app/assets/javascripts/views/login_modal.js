@@ -10,7 +10,7 @@ Reddit.Views.LoginModal = Backbone.View.extend({
   },
 
   exit: function () {
-    this.remove();
+    removeLoginModal($('.backdrop'), this);
   },
 
   render: function () {

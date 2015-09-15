@@ -26,35 +26,37 @@ function enableScroll () {
   $('body').css('overflow-y', 'visible');
 }
 
+function removeLoginModal (backdrop, modal) {
+  enableScroll();
+  modal.$el.removeClass('modal-transition');
+  modal.$el.one('transitionend', function () {
+    modal.remove();
+
+    backdrop.addClass('fade-out');
+    backdrop.on('transitionend', function () {
+      backdrop.remove();
+    });
+  });
+}
+
 function showLoginModal () {
   disableScroll();
 
   var backdrop = $('<div>');
-  var login = new Reddit.Views.LoginModal({
+  var modal = new Reddit.Views.LoginModal({
     backdrop: backdrop
   });
 
-  backdrop.click(function () {
-    enableScroll();
-    $('.modal-box').removeClass('modal-transition');
-    $('.modal-box').one('transitionend', function () {
-      login.remove();
-
-      backdrop.addClass('fade-out');
-      backdrop.on('transitionend', function () {
-        backdrop.remove();
-      });
-    });
-  });
+  backdrop.click(removeLoginModal.bind(this, backdrop, modal));
 
   $('body').prepend(backdrop);
 
   setTimeout(function () {
     backdrop.addClass('backdrop');
     backdrop.one('transitionend', function () {
-      $('body').prepend(login.render().$el);
+      $('body').prepend(modal.render().$el);
       setTimeout(function () {
-        $('.modal-box').addClass('modal-transition');
+        modal.$el.addClass('modal-transition');
       }, 0);
     });
   }, 0);
