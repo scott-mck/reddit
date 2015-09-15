@@ -15,13 +15,27 @@
 //= require sponsored
 //= require get_ad
 
+function disableScroll () {
+  $('body').css('position', 'fixed');
+  $('body').css('overflow-y', 'scroll');
+  $('body').css('width', '100%');
+}
+
+function enableScroll () {
+  $('body').css('position', 'static');
+  $('body').css('overflow-y', 'visible');
+}
+
 function showLoginModal () {
+  disableScroll();
+
   var backdrop = $('<div>');
   var login = new Reddit.Views.LoginModal({
     backdrop: backdrop
   });
 
   backdrop.click(function () {
+    enableScroll();
     $('.modal-box').removeClass('modal-transition');
     $('.modal-box').one('transitionend', function () {
       login.remove();
