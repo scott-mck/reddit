@@ -3,9 +3,15 @@ $.ajax({
   dataType: 'jsonp',
   jsonp: 'jsonp',
   success: function (ad) {
-    var view = new Reddit.Views.Ad({
-      model: ad.data.children[0]
-    });
-    $('#sidebar .ad').append(view.render().$el);
+    for (var i = 0; i < 25; i++) {
+      var model = ad.data.children[i];
+      if (model.data.preview) {
+        var view = new Reddit.Views.Ad({
+          model: ad.data.children[i]
+        });
+        $('#sidebar .ad').append(view.render().$el);
+        return;
+      }
+    }
   }
 });
