@@ -58,20 +58,19 @@ $(document).ready(function() {
 
   $('a.login').click(function () {
     var backdrop = $('<div>');
-
-    login = new Reddit.Views.LoginModal({
+    var login = new Reddit.Views.LoginModal({
       backdrop: backdrop
     });
 
     backdrop.click(function () {
       login.$el.removeClass('login-transition');
-      login.$el.on('transitionend', function () {
+      login.$el.one('transitionend', function () {
         login.remove();
-      });
-      
-      backdrop.addClass('fade-out');
-      backdrop.on('transitionend', function () {
-        backdrop.remove();
+        
+        backdrop.addClass('fade-out');
+        backdrop.on('transitionend', function () {
+          backdrop.remove();
+        });
       });
     });
 
@@ -79,14 +78,14 @@ $(document).ready(function() {
 
     setTimeout(function () {
       backdrop.addClass('backdrop');
-      $('body').prepend(login.render().$el);
-      backdrop.on('transitionend', function () {
+      backdrop.one('transitionend', function () {
+        $('body').prepend(login.render().$el);
+        setTimeout(function () {
+          login.$el.addClass('login-transition');
+        }, 0);
       });
     }, 0);
 
-    setTimeout(function () {
-      login.$el.addClass('login-transition');
-    }, 50);
   });
 
   $('.gold-container').mouseenter(function () {
