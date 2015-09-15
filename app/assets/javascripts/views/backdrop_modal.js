@@ -4,6 +4,13 @@ Reddit.Views.BackdropModal = Backbone.View.extend({
     'click': 'exit'
   },
 
+  initialize: function (options) {
+    this.backdropDelay = options.backdropDelay;
+    this.modalDelay = options.modalDelay;
+    this.login = options.login;
+    this.$el.css('transition', options.backdropDelay + 'ms');
+  },
+
   exit: function (event) {
     if (!$(event.currentTarget).hasClass('backdrop')) {
       return;
@@ -11,11 +18,11 @@ Reddit.Views.BackdropModal = Backbone.View.extend({
 
     setTimeout(function () {
       this.$el.css('opacity', 0);
-    }.bind(this), 400);
-
-    setTimeout(function () {
-      this.remove();
-    }.bind(this), 800);
+      this.$el.on('transitionend', function () {
+        this.remove();
+      }.bind(this));
+      this.login.remove();
+    }.bind(this), this.modalDelay);
   },
 
   render: function () {

@@ -57,8 +57,36 @@ $(document).ready(function() {
   });
 
   $('a.login').click(function () {
-    var view = new Reddit.Views.BackdropModal();
-    $('body').prepend(view.render().$el);
+    // backdropDelay is time it takes for backdrop to transition
+    // after it's finished, add the login modal to page
+    var backdropDelay = 400;
+
+    // modalDelay is time it takes for modal to transition
+    // on modal exit, backdrop waits this long before transitioning and removing
+    var modalDelay = 600;
+
+    // overlap is how long after backdrop starts transitioning before modal
+    // is put onto the page
+    var overlap = 100;
+
+    login = new Reddit.Views.LoginModal({
+      backdropDelay: backdropDelay,
+      modalDelay: modalDelay
+    });
+
+    backdrop = new Reddit.Views.BackdropModal({
+      backdropDelay: backdropDelay,
+      modalDelay: modalDelay,
+      login: login
+    });
+
+    $('body').prepend(backdrop.render().$el);
+    $('body').prepend(login.render().$el);
+
+    setTimeout(function () {
+      login.$el.addClass('login-modal');
+      login.$el.css('top', '30px');
+    }, overlap);
   });
 
   $('.gold-container').mouseenter(function () {

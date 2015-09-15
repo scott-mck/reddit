@@ -1,9 +1,51 @@
 .backdrop {
-  transition: 400ms;
   position: absolute;
   z-index: 100;
   opacity: .5;
   width: 100%;
   height: 100%;
   background: black;
+}
+
+.login-modal {
+  position: absolute;
+  opacity: 1;
+  display: flex;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 60px;
+  width: 730px;
+  background-color: #f8fbfd;
+  border: 1px solid rgba(0,0,0,0.7);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+  .title {
+    font-size: larger;
+    font-weight: bold;
+    color: #4270a2;
+    margin-bottom: 25px;
+  }
+
+  form.create {
+    font-family: normal x-small verdana,arial,helvetica,sans-serif;
+    font-size: 13px;
+    letter-spacing: .3px;
+
+    .form-control {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    input.check {
+      margin: 0px 2px 11px 0px;
+    }
+
+    .btn-primary {
+      float: right;
+      border-bottom: 2px solid #4270a2;
+    }
+  }
 }
