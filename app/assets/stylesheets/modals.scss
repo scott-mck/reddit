@@ -35,18 +35,7 @@
 }
 
 .signin-or-login {
-  // position: absolute;
   display: flex;
-  // z-index: 200;
-  // left: 0;
-  // right: 0;
-  // margin: auto;
-  // padding: 60px;
-  // width: 730px;
-  // background-color: #f8fbfd;
-  // border: 1px solid rgba(0,0,0,0.7);
-  // border-radius: 5px;
-  // box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 
   .close {
     position: absolute;
@@ -115,4 +104,11 @@
     font-size: 12px;
     font-weight: bold;
   }
+
+}
+
+.footnote {
+  margin-top: 48px;
+  color: #6a6a6a;
+  font-size: x-small;
 }
