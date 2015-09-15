@@ -22,10 +22,33 @@
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 
+  .close {
+    position: absolute;
+    right: 9px;
+    top: 5px;
+  }
+
   .create {
     width: 50%;
     padding-right: 60px;
     border-right: 1px solid #e0e0e0;
+  }
+
+  .login {
+    margin-left: 60px;
+    width: 40%;
+
+    .check.remember {
+      float: right;
+      padding-right: 0px;
+
+      a {
+        color: #369;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   .title {
@@ -58,7 +81,7 @@
 
   .btn-primary {
     float: right;
-    margin-top: 20px;
+    margin-top: 25px;
     width: 75px;
     height: 30px;
     background-color: #4980ae;
