@@ -7,6 +7,9 @@
 Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],
   className: 'posts-index-item',
+  events: {
+    'click img.arrow': 'showLoginModal'
+  },
 
   initialize: function (options) {
     this.index = options.index;
@@ -44,5 +47,9 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  showLoginModal: function () {
+    showLoginModal();
   }
 });

@@ -15,6 +15,37 @@
 //= require sponsored
 //= require get_ad
 
+function showLoginModal () {
+  var backdrop = $('<div>');
+  var login = new Reddit.Views.LoginModal({
+    backdrop: backdrop
+  });
+
+  backdrop.click(function () {
+    login.$el.removeClass('login-transition');
+    login.$el.one('transitionend', function () {
+      login.remove();
+
+      backdrop.addClass('fade-out');
+      backdrop.on('transitionend', function () {
+        backdrop.remove();
+      });
+    });
+  });
+
+  $('body').prepend(backdrop);
+
+  setTimeout(function () {
+    backdrop.addClass('backdrop');
+    backdrop.one('transitionend', function () {
+      $('body').prepend(login.render().$el);
+      setTimeout(function () {
+        login.$el.addClass('login-transition');
+      }, 0);
+    });
+  }, 0);
+}
+
 $(document).ready(function() {
   $(document).mouseup(function (e) {
     var $event = $(e.target);
@@ -56,37 +87,7 @@ $(document).ready(function() {
     });
   });
 
-  $('a.login').click(function () {
-    var backdrop = $('<div>');
-    var login = new Reddit.Views.LoginModal({
-      backdrop: backdrop
-    });
-
-    backdrop.click(function () {
-      login.$el.removeClass('login-transition');
-      login.$el.one('transitionend', function () {
-        login.remove();
-        
-        backdrop.addClass('fade-out');
-        backdrop.on('transitionend', function () {
-          backdrop.remove();
-        });
-      });
-    });
-
-    $('body').prepend(backdrop);
-
-    setTimeout(function () {
-      backdrop.addClass('backdrop');
-      backdrop.one('transitionend', function () {
-        $('body').prepend(login.render().$el);
-        setTimeout(function () {
-          login.$el.addClass('login-transition');
-        }, 0);
-      });
-    }, 0);
-
-  });
+  $('a.login').click(showLoginModal);
 
   $('.gold-container').mouseenter(function () {
     if (window.goldHideId) {
