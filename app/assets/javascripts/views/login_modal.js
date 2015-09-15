@@ -1,10 +1,16 @@
 Reddit.Views.LoginModal = Backbone.View.extend({
   template: JST['login_modal'],
+  className: 'login-modal',
+  events: {
+    'click .close': 'exit'
+  },
 
   initialize: function (options) {
-    this.modalDelay = options.modalDelay;
-    this.$el.css('transition', options.modalDelay + 'ms linear');
-    this.$el.css('top', '-50px');
+    this.backdrop = options.backdrop;
+  },
+
+  exit: function () {
+    this.remove();
   },
 
   render: function () {

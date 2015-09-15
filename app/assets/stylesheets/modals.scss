@@ -1,4 +1,6 @@
+
 .backdrop {
+  transition: 400ms;
   position: absolute;
   z-index: 100;
   opacity: .5;
@@ -7,9 +9,20 @@
   background: black;
 }
 
+.fade-out {
+  opacity: 0;
+}
+
+.login-transition {
+  top: 30px !important;
+  opacity: 1 !important;
+}
+
 .login-modal {
+  top: -100px;
+  opacity: 0;
+  transition: 200ms linear;
   position: absolute;
-  opacity: 1;
   display: flex;
   z-index: 200;
   left: 0;

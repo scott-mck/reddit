@@ -57,36 +57,36 @@ $(document).ready(function() {
   });
 
   $('a.login').click(function () {
-    // backdropDelay is time it takes for backdrop to transition
-    // after it's finished, add the login modal to page
-    var backdropDelay = 400;
-
-    // modalDelay is time it takes for modal to transition
-    // on modal exit, backdrop waits this long before transitioning and removing
-    var modalDelay = 600;
-
-    // overlap is how long after backdrop starts transitioning before modal
-    // is put onto the page
-    var overlap = 100;
+    var backdrop = $('<div>');
 
     login = new Reddit.Views.LoginModal({
-      backdropDelay: backdropDelay,
-      modalDelay: modalDelay
+      backdrop: backdrop
     });
 
-    backdrop = new Reddit.Views.BackdropModal({
-      backdropDelay: backdropDelay,
-      modalDelay: modalDelay,
-      login: login
+    backdrop.click(function () {
+      login.$el.removeClass('login-transition');
+      login.$el.on('transitionend', function () {
+        login.remove();
+      });
+      
+      backdrop.addClass('fade-out');
+      backdrop.on('transitionend', function () {
+        backdrop.remove();
+      });
     });
 
-    $('body').prepend(backdrop.render().$el);
-    $('body').prepend(login.render().$el);
+    $('body').prepend(backdrop);
 
     setTimeout(function () {
-      login.$el.addClass('login-modal');
-      login.$el.css('top', '30px');
-    }, overlap);
+      backdrop.addClass('backdrop');
+      $('body').prepend(login.render().$el);
+      backdrop.on('transitionend', function () {
+      });
+    }, 0);
+
+    setTimeout(function () {
+      login.$el.addClass('login-transition');
+    }, 50);
   });
 
   $('.gold-container').mouseenter(function () {
