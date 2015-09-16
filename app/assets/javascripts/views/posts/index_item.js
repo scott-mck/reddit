@@ -8,7 +8,8 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],
   className: 'posts-index-item',
   events: {
-    'click img.arrow': 'showLoginModal'
+    'click img.arrow': 'showLoginModal',
+    'click .embed': 'showDescription'
   },
 
   initialize: function (options) {
@@ -53,6 +54,11 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  showDescription: function () {
+    var description = _.unescape(this.model.get('data').selftext_html);
+    this.$('.post-content').append(description);
   },
 
   showLoginModal: function () {

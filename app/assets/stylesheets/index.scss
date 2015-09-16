@@ -81,12 +81,17 @@
 
   .embed {
     float: left;
-    margin-top: 3px;
-    margin-right: 5px;
-    width: 23px;
-    height: 23px;
+    margin-top: 2px;
+    margin-right: 4px;
+    width: 25px;
+    height: 25px;
     background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
-    background-position: -90px -547px;
+    background-position: -89px -546px;
+
+    &:hover {
+      background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
+      background-position: -60px -546px;
+    }
   }
 
   .timeago {
@@ -120,6 +125,17 @@
         cursor: pointer;
       }
     }
+  }
+
+  .md {
+    overflow: auto;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border: 1px solid #369;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-size: 14px;
+    line-height: 19px;
   }
 }
 
