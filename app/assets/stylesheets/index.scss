@@ -94,6 +94,16 @@
     }
   }
 
+  .embed.clicked {
+    background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
+    background-position: -28px -583px;
+
+    &:hover {
+      background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
+      background-position: 1px -583px;
+    }
+  }
+
   .timeago {
     color: #888;
     font-size: x-small;
