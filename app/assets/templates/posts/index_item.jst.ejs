@@ -25,8 +25,12 @@
     <a href="<%= 'https://www.reddit.com/domain/' + post.get('data').domain %>">
       (<%= post.get('data').domain %>)
     </a>
-  </span>
+  </span><br>
 
+  <% if (description) { %>
+    <div class="embed"></div>
+  <% } %>
+  
   <div class="timeago">
     submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
     by

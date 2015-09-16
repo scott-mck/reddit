@@ -79,6 +79,16 @@
     }
   }
 
+  .embed {
+    float: left;
+    margin-top: 3px;
+    margin-right: 5px;
+    width: 23px;
+    height: 23px;
+    background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
+    background-position: -90px -547px;
+  }
+
   .timeago {
     color: #888;
     font-size: x-small;
