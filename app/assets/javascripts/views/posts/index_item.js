@@ -60,7 +60,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   hideShare: function () {
     if (this.transitioning) return true;
     this.transitioning = true;
-    
+
     this.$('.show-share').removeClass('clicked');
 
     this.$('.share').addClass('share-transition');
@@ -107,7 +107,9 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     this.transitioning = true;
 
     this.$('.show-share').addClass('clicked');
-    var view = new Reddit.Views.SharePartial();
+    var view = new Reddit.Views.SharePartial({
+      removeFn: this.hideShare.bind(this)
+    });
     this.$('.post-content').append(view.render().$el);
 
     setTimeout(function () {

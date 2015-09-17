@@ -173,11 +173,12 @@
   }
 
   .share-transition {
-    height: 2px !important;
+    height: 0px !important;
     visibility: hidden;
   }
 
   .share {
+    position: relative;
     visibility: visible;
     height: 130px;
     transition: height 200ms;
@@ -185,6 +186,21 @@
     width: 550px;
     border: 1px solid #e2e2e2;
     overflow: hidden;
+    color: #808080;
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 14px;
+
+    .close {
+      position: absolute;
+      top: 3px;
+      right: 5px;
+    }
+
+    img {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
 
