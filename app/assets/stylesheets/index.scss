@@ -182,6 +182,7 @@
     visibility: visible;
     height: 130px;
     transition: height 200ms;
+    margin-top: 3px;
     background-color: #fbfbfb;
     width: 550px;
     border: 1px solid #e2e2e2;
@@ -197,9 +198,24 @@
       right: 5px;
     }
 
+    table {
+      text-align: right;
+
+      td {
+        padding-right: 10px;
+        padding-bottom: 15px;
+      }
+    }
+
     img {
+      float: left;
+      margin-right: 5px;
       width: 26px;
       height: 26px;
+    }
+
+    input {
+      width: 365px;
     }
   }
 }
