@@ -10,11 +10,16 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   className: 'posts-index-item',
   events: {
     'click img.arrow': 'showLoginModal',
-    'click .embed': 'toggleEmbedContent'
+    'click .embed': 'toggleEmbedContent',
   },
 
   initialize: function (options) {
     this.index = options.index;
+  },
+
+  hideEmbedContent: function (event) {
+    $(event.currentTarget).removeClass('clicked');
+    this.$('.embed-content').remove();
   },
 
   render: function () {
@@ -62,22 +67,25 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     return this;
   },
 
+  showEmbedContent: function (event) {
+    $(event.currentTarget).addClass('clicked');
+    var description = $(_.unescape(this.embedContent));
+    description.addClass('embed-content');
+
+    if ($(event.currentTarget).attr('class').indexOf('desc') > -1) {
+      description.addClass('description');
+    } else if ($(event.currentTarget).attr('class').indexOf('video') > -1) {
+      description.addClass('video');
+    }
+
+    this.$('.post-content').append(description);
+  },
+
   toggleEmbedContent: function (event) {
     if ($(event.currentTarget).hasClass('clicked')) {
-      $(event.currentTarget).removeClass('clicked');
-      this.$('.embed-content').remove();
+      this.hideEmbedContent(event);
     } else {
-      $(event.currentTarget).addClass('clicked');
-      var description = $(_.unescape(this.embedContent));
-      description.addClass('embed-content');
-
-      if ($(event.currentTarget).attr('class').indexOf('desc') > -1) {
-        description.addClass('description');
-      } else if ($(event.currentTarget).attr('class').indexOf('video') > -1) {
-        description.addClass('video');
-      }
-
-      this.$('.post-content').append(description);
+      this.showEmbedContent(event);
     }
   },
 
