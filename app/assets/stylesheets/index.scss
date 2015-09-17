@@ -122,7 +122,7 @@
     }
   }
 
-  .description {
+  .embed-content.description {
     overflow: auto;
     margin-top: 10px;
     padding: 5px 10px 0px 10px;
@@ -132,6 +132,11 @@
     background-color: #fafafa;
     font-size: 14px;
     line-height: 19px;
+  }
+
+  .embed-content.video {
+    margin-top: 10px;
+    margin-left: -28px; // aligns left but seems fragile...
   }
 
   .timeago {
