@@ -17,49 +17,66 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     this.index = options.index;
   },
 
+  getEmbedContent: function () {
+    if (this.model.get('data').selftext_html) {
+      this.embedClass = 'embed-desc';
+      this.embedContent = this.model.get('data').selftext_html;
+    } else if (this.model.get('data').secure_media_embed.content) {
+      this.embedClass = 'embed-video';
+      this.embedContent = this.model.get('data').secure_media_embed.content;
+    }
+  },
+
+  getScore: function () {
+    if (this.model.get('data').hide_score) {
+      this.score = '•';
+    } else {
+      this.score = this.model.get('data').score;
+    }
+  },
+
+  getThumbnail: function () {
+    var defaults = ['self', 'nsfw', 'default'];
+
+    if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
+      // show default thumbnail
+      this.thumbnail = 'https://www.reddit.com/static/self_default2.png';
+      this.paddingLeft = '151px;';
+    } else if (this.model.get('data').thumbnail !== '') {
+      // show given thumbnail
+      this.thumbnail = this.model.get('data').thumbnail;
+      this.paddingLeft = '151px;';
+    } else {
+      // no thumbnail
+      this.paddingLeft = '76px';
+    }
+  },
+
   hideEmbedContent: function (event) {
     this.$('.embed').removeClass('clicked');
     this.$('.embed-content').remove();
   },
 
+  hideShare: function () {
+    this.$('.show-share').removeClass('clicked');
+
+    this.$('.share').addClass('share-transition');
+    this.$('.share').one('transitionend', function () {
+      this.$('.share').remove();
+    }.bind(this));
+  },
+
   render: function () {
-    var defaults = ['self', 'nsfw', 'default'];
-    var thumbnail, paddingLeft, score;
-
-    if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
-      // show default thumbnail
-      thumbnail = 'https://www.reddit.com/static/self_default2.png';
-      paddingLeft = '151px;';
-    } else if (this.model.get('data').thumbnail !== '') {
-      // show given thumbnail
-      thumbnail = this.model.get('data').thumbnail;
-      paddingLeft = '151px;';
-    } else {
-      // no thumbnail
-      paddingLeft = '76px';
-    }
-
-    var embedClass;
-    if (this.model.get('data').selftext_html) {
-      embedClass = 'embed-desc';
-      this.embedContent = this.model.get('data').selftext_html;
-    } else if (this.model.get('data').secure_media_embed.content) {
-      embedClass = 'embed-video';
-      this.embedContent = this.model.get('data').secure_media_embed.content;
-    }
-
-    if (this.model.get('data').hide_score) {
-      score = '•';
-    } else {
-      score = this.model.get('data').score;
-    }
+    this.getThumbnail();
+    this.getEmbedContent();
+    this.getScore();
 
     var content = this.template({
       post: this.model,
-      score: score,
-      thumbnail: thumbnail,
-      paddingLeft: paddingLeft,
-      embedClass: embedClass,
+      score: this.score,
+      thumbnail: this.thumbnail,
+      paddingLeft: this.paddingLeft,
+      embedClass: this.embedClass,
       index: this.index,
       numComments: this.model.get('data').num_comments
     });
@@ -81,6 +98,18 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     this.$('.post-content').append(description);
   },
 
+  showShare: function () {
+    this.$('.show-share').addClass('clicked');
+
+    var view = new Reddit.Views.SharePartial();
+    this.$('.post-content').append(view.render().$el);
+
+    setTimeout(function () {
+      this.$('.share-transition').addClass('share');
+      this.$('.share').removeClass('share-transition');
+    }.bind(this), 0);
+  },
+
   toggleEmbedContent: function () {
     if (this.$('.embed').hasClass('clicked')) {
       this.hideEmbedContent();
@@ -91,22 +120,9 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
 
   toggleShare: function () {
     if (this.$('.show-share').hasClass('clicked')) {
-      this.$('.show-share').removeClass('clicked');
-
-      this.$('.share').addClass('share-transition');
-      this.$('.share').one('transitionend', function () {
-        this.$('.share').remove();
-      }.bind(this));
+      this.hideShare();
     } else {
-      this.$('.show-share').addClass('clicked');
-
-      var view = new Reddit.Views.SharePartial();
-      this.$('.post-content').append(view.render().$el);
-
-      setTimeout(function () {
-        this.$('.share-transition').addClass('share');
-        this.$('.share').removeClass('share-transition');
-      }.bind(this), 0);
+      this.showShare();
     }
   },
 });
