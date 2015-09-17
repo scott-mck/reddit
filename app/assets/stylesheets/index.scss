@@ -172,9 +172,17 @@
     }
   }
 
+  .share-transition {
+    height: 0px !important;
+  }
+
   .share {
+    height: 130px;
+    transition: height 200ms;
     width: 550px;
     border: 1px solid black;
+    background-color: white;
+    overflow: hidden;
   }
 }
 

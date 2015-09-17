@@ -92,12 +92,21 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   toggleShare: function () {
     if (this.$('.show-share').hasClass('clicked')) {
       this.$('.show-share').removeClass('clicked');
-      this.$('.share').remove();
+
+      this.$('.share').addClass('share-transition');
+      this.$('.share').one('transitionend', function () {
+        this.$('.share').remove();
+      }.bind(this));
     } else {
       this.$('.show-share').addClass('clicked');
 
       var view = new Reddit.Views.SharePartial();
       this.$('.post-content').append(view.render().$el);
+
+      setTimeout(function () {
+        this.$('.share-transition').addClass('share');
+        this.$('.share').removeClass('share-transition');
+      }.bind(this), 0);
     }
   },
 });
