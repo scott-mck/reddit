@@ -32,7 +32,12 @@
   <% } %>
 
   <div class="timeago">
-    submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
+    submitted
+    <% if ($.timeago(post.get('data').created_utc * 1000) === 'seconds ago') { %>
+      just now
+    <% } else { %>
+      <%= $.timeago(post.get('data').created_utc * 1000) %>
+    <% } %>
     by
     <a href="https://www.reddit.com/user/<%= post.get('data').author %>">
       <%= post.get('data').author %></a>

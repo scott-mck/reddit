@@ -49,7 +49,7 @@
         suffixAgo: "ago",
         suffixFromNow: "from now",
         inPast: 'any moment now',
-        seconds: "seconds", // TODO: change this to 'submitted just now' somehow
+        seconds: "seconds",
         minute: "a minute",
         minutes: "%d minutes",
         hour: "1 hour",
