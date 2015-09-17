@@ -1,12 +1,28 @@
 Reddit.Views.ViewMore = Backbone.View.extend({
   template: JST['view_more'],
   className: 'view-more',
+  events: {
+    'click .random-subreddit': 'redirectToRandom'
+  },
 
   initialize: function (options) {
     this.after = options.after;
     this.before = options.before;
     this.countAfter = options.countAfter;
     this.countBefore = options.countBefore;
+  },
+
+  redirectToRandom: function () {
+    $.ajax({
+      url: 'https://www.reddit.com/r/random/.json',
+      dataType: 'jsonp',
+      jsonp: 'jsonp',
+      success: function (resp, status, json) {
+        debugger
+        var subreddit = json.responseJSON.data.children[0].data.subreddit;
+        window.location = '/r/' + subreddit;
+      }
+    });
   },
 
   render: function () {
@@ -16,7 +32,7 @@ Reddit.Views.ViewMore = Backbone.View.extend({
     } else {
       query += '&';
     }
-    
+
     var content = this.template({
       currentUrl: window.location.pathname + query,
       after: this.after,
