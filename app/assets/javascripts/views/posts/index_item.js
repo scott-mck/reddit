@@ -10,6 +10,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   events: {
     'click img.arrow': 'showLoginModal',
     'click .embed': 'toggleEmbedContent',
+    'click .show-share': 'toggleShare'
   },
 
   initialize: function (options) {
@@ -17,7 +18,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   hideEmbedContent: function (event) {
-    $(event.currentTarget).removeClass('clicked');
+    this.$('.embed').removeClass('clicked');
     this.$('.embed-content').remove();
   },
 
@@ -66,29 +67,37 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     return this;
   },
 
-  showEmbedContent: function (event) {
-    $(event.currentTarget).addClass('clicked');
+  showEmbedContent: function () {
+    this.$('.embed').addClass('clicked');
     var description = $(_.unescape(this.embedContent));
     description.addClass('embed-content');
 
-    if ($(event.currentTarget).attr('class').indexOf('desc') > -1) {
+    if (this.$('.embed').attr('class').indexOf('desc') > -1) {
       description.addClass('description');
-    } else if ($(event.currentTarget).attr('class').indexOf('video') > -1) {
+    } else if (this.$('.embed').attr('class').indexOf('video') > -1) {
       description.addClass('video');
     }
 
     this.$('.post-content').append(description);
   },
 
-  toggleEmbedContent: function (event) {
-    if ($(event.currentTarget).hasClass('clicked')) {
-      this.hideEmbedContent(event);
+  toggleEmbedContent: function () {
+    if (this.$('.embed').hasClass('clicked')) {
+      this.hideEmbedContent();
     } else {
-      this.showEmbedContent(event);
+      this.showEmbedContent();
     }
   },
 
-  showLoginModal: function () {
-    showLoginModal();
-  }
+  toggleShare: function () {
+    if (this.$('.show-share').hasClass('clicked')) {
+      this.$('.show-share').removeClass('clicked');
+      this.$('.share').remove();
+    } else {
+      this.$('.show-share').addClass('clicked');
+
+      var view = new Reddit.Views.SharePartial();
+      this.$('.post-content').append(view.render().$el);
+    }
+  },
 });
