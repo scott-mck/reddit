@@ -7,6 +7,7 @@ Reddit.Views.SharePartial = Backbone.View.extend({
 
   initialize: function (options) {
     this.removeFn = options.removeFn;
+    this.link = options.link;
   },
 
   exit: function () {
@@ -14,7 +15,9 @@ Reddit.Views.SharePartial = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template;
+    var content = this.template({
+      link: this.link
+    });
     this.$el.html(content);
     return this;
   }
