@@ -35,13 +35,15 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       // show given thumbnail
       thumbnail = this.model.get('data').thumbnail;
       paddingLeft = '151px;';
-      if (this.model.get('data').domain.indexOf('self') > -1
-          && this.model.get('data').selftext_html) {
-        showDesc = true;
-      }
     } else {
       // no thumbnail
       paddingLeft = '76px';
+    }
+
+    var embedClass, embedContent;
+    if (this.model.get('data').selftext_html) {
+      embedClass = 'desc';
+      embedContent = this.model.get('data').selftext_html;
     }
 
     if (this.model.get('data').hide_score) {
@@ -55,9 +57,10 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       score: score,
       thumbnail: thumbnail,
       paddingLeft: paddingLeft,
-      description: this.model.get('data').selftext_html,
+      embedClass: embedClass,
+      embedContent: embedContent,
       index: this.index,
-      num_comments: this.model.get('data').num_comments
+      numComments: this.model.get('data').num_comments
     });
     this.$el.html(content);
     return this;

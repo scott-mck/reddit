@@ -86,10 +86,12 @@
     width: 25px;
     height: 25px;
     background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
+  }
+
+  .embed.desc {
     background-position: -89px -546px;
 
     &:hover {
-      background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
       background-position: -60px -546px;
     }
   }

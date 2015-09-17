@@ -27,10 +27,10 @@
     </a>
   </span><br>
 
-  <% if (description) { %>
-    <div class="embed"></div>
+  <% if (embedContent) { %>
+    <div class="embed <%= embedClass %>"></div>
   <% } %>
-  
+
   <div class="timeago">
     submitted <%= $.timeago(post.get('data').created_utc * 1000) %>
     by
@@ -44,12 +44,12 @@
 
   <div class="comments">
     <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
-      <% if (num_comments === 0) { %>
+      <% if (numComments === 0) { %>
         comment</a>
-      <% } else if (num_comments === 1) { %>
+      <% } else if (numComments === 1) { %>
         1 comment</a>
       <% } else { %>
-        <%= num_comments %> comments</a>
+        <%= numComments %> comments</a>
       <% } %>
     <span>share</span>
   </div>
