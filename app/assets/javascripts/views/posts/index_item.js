@@ -10,16 +10,11 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   className: 'posts-index-item',
   events: {
     'click img.arrow': 'showLoginModal',
-    'click .embed.desc': 'toggleDescription'
+    'click .embed': 'toggleEmbedContent'
   },
 
   initialize: function (options) {
     this.index = options.index;
-  },
-
-  hideDescription: function () {
-    this.$('.embed.desc').removeClass('clicked');
-    this.$('.md').remove();
   },
 
   render: function () {
@@ -39,13 +34,13 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       paddingLeft = '76px';
     }
 
-    var embedClass, embedContent;
+    var embedClass;
     if (this.model.get('data').selftext_html) {
-      embedClass = 'desc';
-      embedContent = this.model.get('data').selftext_html;
-    } else if (this.model.get('data').secure_media_embed) {
-      embedClass = 'video';
-      embedContent = this.model.get('data').secure_media_embed.content;
+      embedClass = 'embed-desc';
+      this.embedContent = this.model.get('data').selftext_html;
+    } else if (this.model.get('data').secure_media_embed.content) {
+      embedClass = 'embed-video';
+      this.embedContent = this.model.get('data').secure_media_embed.content;
     }
 
     if (this.model.get('data').hide_score) {
@@ -60,7 +55,6 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       thumbnail: thumbnail,
       paddingLeft: paddingLeft,
       embedClass: embedClass,
-      embedContent: embedContent,
       index: this.index,
       numComments: this.model.get('data').num_comments
     });
@@ -68,13 +62,21 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     return this;
   },
 
-  toggleDescription: function () {
-    if (this.$('.embed.desc').hasClass('clicked')) {
-      this.$('.embed.desc').removeClass('clicked');
-      this.$('.md').remove();
+  toggleEmbedContent: function (event) {
+    if ($(event.currentTarget).hasClass('clicked')) {
+      $(event.currentTarget).removeClass('clicked');
+      this.$('.embed-content').remove();
     } else {
-      this.$('.embed.desc').addClass('clicked');
-      var description = _.unescape(this.model.get('data').selftext_html);
+      $(event.currentTarget).addClass('clicked');
+      var description = $(_.unescape(this.embedContent));
+      description.addClass('embed-content');
+
+      if ($(event.currentTarget).attr('class').indexOf('desc') > -1) {
+        description.addClass('description');
+      } else if ($(event.currentTarget).attr('class').indexOf('video') > -1) {
+        description.addClass('video');
+      }
+
       this.$('.post-content').append(description);
     }
   },
