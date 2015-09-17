@@ -44,6 +44,9 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     if (this.model.get('data').selftext_html) {
       embedClass = 'desc';
       embedContent = this.model.get('data').selftext_html;
+    } else if (this.model.get('data').secure_media_embed) {
+      embedClass = 'video';
+      embedContent = this.model.get('data').secure_media_embed.content;
     }
 
     if (this.model.get('data').hide_score) {

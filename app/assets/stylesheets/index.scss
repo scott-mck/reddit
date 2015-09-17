@@ -96,13 +96,29 @@
     }
   }
 
-  .embed.clicked {
+  .embed.desc.clicked {
     background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
     background-position: -28px -583px;
 
     &:hover {
       background-image: url(https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png);
       background-position: 1px -583px;
+    }
+  }
+
+  .embed.video {
+    background-position: 34px -583px;
+
+    &:hover {
+      background-position: 63px -583px;
+    }
+  }
+
+  .embed.video.clicked {
+    background-position: 92px -612px;
+
+    &:hover {
+      background-position: 121px -612px;
     }
   }
 
