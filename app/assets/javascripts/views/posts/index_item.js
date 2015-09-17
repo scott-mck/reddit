@@ -58,11 +58,15 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   hideShare: function () {
+    if (this.transitioning) return true;
+    this.transitioning = true;
+    
     this.$('.show-share').removeClass('clicked');
 
     this.$('.share').addClass('share-transition');
     this.$('.share').one('transitionend', function () {
       this.$('.share').remove();
+      this.transitioning = false;
     }.bind(this));
   },
 
@@ -99,14 +103,17 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   showShare: function () {
-    this.$('.show-share').addClass('clicked');
+    if (this.transitioning) return;
+    this.transitioning = true;
 
+    this.$('.show-share').addClass('clicked');
     var view = new Reddit.Views.SharePartial();
     this.$('.post-content').append(view.render().$el);
 
     setTimeout(function () {
       this.$('.share-transition').addClass('share');
       this.$('.share').removeClass('share-transition');
+      this.transitioning = false;
     }.bind(this), 0);
   },
 
