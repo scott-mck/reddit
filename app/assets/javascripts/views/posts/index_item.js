@@ -58,16 +58,16 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   hideShare: function () {
-    if (this.transitioning) return true;
+    if (this.transitioning) return;
     this.transitioning = true;
 
     this.$('.show-share').removeClass('clicked');
 
     this.$('.share').addClass('share-transition');
-    this.$('.share').one('transitionend', function () {
+    setTimeout(function () {
       this.$('.share').remove();
       this.transitioning = false;
-    }.bind(this));
+    }.bind(this), 200); // transitionend doesn't work! ugh!
   },
 
   render: function () {
@@ -116,8 +116,10 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     setTimeout(function () {
       this.$('.share-transition').addClass('share');
       this.$('.share').removeClass('share-transition');
-      this.$('.share input').focus();
-      this.$('.share input').select();
+      this.$('.share').one('transitionend', function () {
+        this.$('.share input').focus();
+        this.$('.share input').select();
+      }.bind(this));
       this.transitioning = false;
     }.bind(this), 0);
   },
