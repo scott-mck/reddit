@@ -105,6 +105,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   showShare: function () {
     if (this.transitioning) return;
     this.transitioning = true;
+    $('.show-share.clicked').click(); // hide all other share partials
 
     this.$('.show-share').addClass('clicked');
     var view = new Reddit.Views.SharePartial({
