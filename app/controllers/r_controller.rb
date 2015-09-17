@@ -1,4 +1,3 @@
-# TODO: Create log-in modal
 # TODO: Fetch correct sponsored posts
 
 class RController < ApplicationController
