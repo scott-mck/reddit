@@ -10,8 +10,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   className: 'posts-index-item',
   events: {
     'click img.arrow': 'showLoginModal',
-    'click .embed': 'showDescription',
-    'click .clicked': 'hideDescription'
+    'click .embed.desc': 'toggleDescription'
   },
 
   initialize: function (options) {
@@ -19,7 +18,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   hideDescription: function () {
-    this.$('.embed').removeClass('clicked');
+    this.$('.embed.desc').removeClass('clicked');
     this.$('.md').remove();
   },
 
@@ -69,11 +68,15 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     return this;
   },
 
-  showDescription: function () {
-    this.$('.embed').addClass('clicked');
-
-    var description = _.unescape(this.model.get('data').selftext_html);
-    this.$('.post-content').append(description);
+  toggleDescription: function () {
+    if (this.$('.embed.desc').hasClass('clicked')) {
+      this.$('.embed.desc').removeClass('clicked');
+      this.$('.md').remove();
+    } else {
+      this.$('.embed.desc').addClass('clicked');
+      var description = _.unescape(this.model.get('data').selftext_html);
+      this.$('.post-content').append(description);
+    }
   },
 
   showLoginModal: function () {
