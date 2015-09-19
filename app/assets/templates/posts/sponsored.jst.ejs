@@ -37,11 +37,11 @@
   <div class="comments">
     <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
       <% if (num_comments === 0) { %>
-        comment</a>
+        <span>comment</a></span>
       <% } else if (num_comments === 1) { %>
-        1 comment</a>
+        <span>1 comment</a></span>
       <% } else { %>
-        <%= num_comments %> comments</a>
+        <span><%= num_comments %> comments</a></span>
       <% } %>
     <span>share</span>
   </div>
