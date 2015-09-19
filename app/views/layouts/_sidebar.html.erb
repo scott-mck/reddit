@@ -1,16 +1,8 @@
 <!-- TODO: forms do not work -->
 
-<% if params[:subreddit] == nil %>
-  <% action = '/' %>
-<% else %>
-  <% action = subreddits_url(params[:subreddit]) %>
-<% end %>
-
-<form class="search" action="<%= action %>" method="post">
-  <%= auth_token %>
-
-  <input type="text" class="text-field" name="q" placeholder="search">
-  <input type="submit" class="submit" name="submit" value="">
+<form class="search">
+  <input type="text" class="text-field" placeholder="search">
+  <input class="submit">
 </form>
 
 <form class="login">
