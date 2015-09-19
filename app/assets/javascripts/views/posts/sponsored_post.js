@@ -73,7 +73,6 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
 
   showNextPost: function () {
     this.index = (this.index + 1) % 9;
-    console.log(this.index)
     this.model = this.collection[this.index];
     this.render();
   },
