@@ -172,11 +172,20 @@
     }
 
     span {
-      margin-left: 8px;
-      &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
+      margin-right: 8px;
+    }
+
+    span.nsfw {
+      padding: 1px 3px 1px 3px;
+      font-weight: normal;
+      color: #d10023;
+      border: 1px solid #d10023;
+      border-radius: 3px;
+    }
+
+    span:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 

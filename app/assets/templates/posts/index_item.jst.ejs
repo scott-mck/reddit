@@ -52,14 +52,17 @@
   </div>
 
   <div class="comments">
+    <% if (nsfw) { %>
+      <span class="nsfw">NSFW</span>
+    <% } %>
     <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
       <% if (numComments === 0) { %>
-        comment</a>
+        <span>comment</a></span>
       <% } else if (numComments === 1) { %>
-        1 comment</a>
+        <span>1 comment</a></span>
       <% } else { %>
-        <%= numComments %> comments</a>
+        <span><%= numComments %> comments</a></span>
       <% } %>
-    <span class="show-share">share</span>
+    <span class="show-share link">share</span>
   </div>
 </div>
