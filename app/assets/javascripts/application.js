@@ -29,14 +29,14 @@ function enableScroll () {
 function removeLoginModal (backdrop, modal) {
   enableScroll();
   modal.$el.removeClass('modal-transition');
-  modal.$el.one('transitionend', function () {
+  setTimeout(function () {
     modal.remove();
 
     backdrop.addClass('fade-out');
-    backdrop.on('transitionend', function () {
+    setTimeout(function () {
       backdrop.remove();
-    });
-  });
+    }, 200);
+  }, 200);
 }
 
 function showLoginModal () {
