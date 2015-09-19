@@ -105,6 +105,14 @@ $(document).ready(function() {
 
   $('a.login, .submit-post').click(showLoginModal);
 
+  $('form.search').submit(function (event) {
+    event.preventDefault();
+    var data = $(event.currentTarget).serializeJSON();
+    window.location = 'https://www.reddit.com' +
+                       window.location.pathname +
+                      'search?q=' + data.q;
+  });
+
   $('.gold-container').mouseenter(function () {
     if (window.goldHideId) {
       clearTimeout(window.goldHideId);
