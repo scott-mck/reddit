@@ -16,6 +16,10 @@ Reddit.Views.LoginModal = Backbone.View.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
+    setTimeout(function () {
+      this.$('.login input[name="username"]').focus()
+      this.$('.login input[name="username"]').select()
+    }.bind(this), 0);
     return this;
   }
 });
