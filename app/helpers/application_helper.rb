@@ -24,6 +24,6 @@ module ApplicationHelper
        movies music news nosleep nottheonion oldschoolcool personalfinance
        philosophy photoshopbattles pics science showerthoughts space sports
        television tifu todayilearned twoxchromosomes upliftingnews videos
-       worldnews videos worldnews writingprompts)
+       worldnews writingprompts)
   end
 end
