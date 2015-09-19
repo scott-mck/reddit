@@ -8,7 +8,11 @@
   <img class="arrow down" src="http://i.weirdnutdaily.com/images/downvote.gif">
 </div>
 
-<% if (thumbnail) { %>
+<% if (thumbnail === 'nsfw') { %>
+  <div class="picture">
+    <div class="nsfw-thumbnail"></div>
+  </div>
+<% } else if (thumbnail) { %>
   <div class="picture">
     <a href="<%= post.get('data').url %>">
       <img src="<%= thumbnail %>" class="picture">

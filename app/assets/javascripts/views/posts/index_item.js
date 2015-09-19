@@ -36,12 +36,14 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   getThumbnail: function () {
-    var defaults = ['self', 'nsfw', 'default'];
+    var defaults = ['self', 'default'];
 
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       // show default thumbnail
       this.thumbnail = 'https://www.reddit.com/static/self_default2.png';
       this.paddingLeft = '151px;';
+    } else if (this.model.get('data').thumbnail === 'nsfw') {
+      this.thumbnail = 'nsfw';
     } else if (this.model.get('data').thumbnail !== '') {
       // show given thumbnail
       this.thumbnail = this.model.get('data').thumbnail;
