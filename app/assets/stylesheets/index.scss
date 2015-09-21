@@ -332,12 +332,16 @@
 
   .picture {
     float: left;
+    margin-right: 3px;
 
     img {
       width: 70px;
       height: auto;
     }
+  }
 
+  .post-content {
+    overflow: auto;
   }
 
   .whats-this {
