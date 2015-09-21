@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def subreddit_list
     %w(gadgets sports gaming pics worldnews videos askreddit aww music funny
-       news movies books history food philosophy television jokes art diy space
+       news movies blog books history food philosophy television jokes art diy space
        documentaries fitness askscience nottheonion todayilearned personalfinance
        gifs listentothis iama twoxchromosomes creepy nosleep getmotivated
        writingprompts lifeprotips earthporn explainlikeimfive showerthoughts
