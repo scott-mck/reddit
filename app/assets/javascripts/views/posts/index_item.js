@@ -40,16 +40,11 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       // show default thumbnail
       this.thumbnail = 'https://www.reddit.com/static/self_default2.png';
-      this.paddingLeft = '151px;';
     } else if (this.model.get('data').thumbnail === 'nsfw') {
       this.thumbnail = 'nsfw';
     } else if (this.model.get('data').thumbnail !== '') {
       // show given thumbnail
       this.thumbnail = this.model.get('data').thumbnail;
-      this.paddingLeft = '151px;';
-    } else {
-      // no thumbnail
-      this.paddingLeft = '76px';
     }
   },
 
@@ -80,7 +75,6 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       post: this.model,
       score: this.score,
       thumbnail: this.thumbnail,
-      paddingLeft: this.paddingLeft,
       embedClass: this.embedClass,
       index: this.index,
       numComments: this.model.get('data').num_comments,

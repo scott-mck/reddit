@@ -52,6 +52,7 @@
 
   .picture {
     float: left;
+    margin-right: 3px;
 
     img {
       width: 70px;
@@ -65,6 +66,10 @@
       background-image: url('https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png');
       background-position: 0px -361px;
     }
+  }
+
+  .post-content {
+    overflow: auto;
   }
 
   a.post-title {
