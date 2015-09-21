@@ -1,6 +1,6 @@
 Reddit.Views.SponsoredPost = Backbone.View.extend({
   template: JST['posts/sponsored'],
-  className: 'posts-index-item',
+  className: 'posts-index-item sponsored',
   events: {
     'click .prev': 'showPrevPost',
     'click .next': 'showNextPost',
@@ -34,12 +34,8 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
 
     if (defaults.indexOf(this.model.get('data').thumbnail) > -1) {
       thumbnail = 'https://www.reddit.com/static/self_default2.png';
-      paddingLeft = '145px;';
     } else if (this.model.get('data').thumbnail !== '') {
       thumbnail = this.model.get('data').thumbnail;
-      paddingLeft = '145px;';
-    } else {
-      paddingLeft = '70px';
     }
 
     if (this.model.get('data').hide_score) {
@@ -52,7 +48,6 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
       thumbnail: thumbnail,
       score: score,
       post: this.model,
-      paddingLeft: paddingLeft,
       num_comments: this.model.get('data').num_comments
     });
     this.$el.html(content);

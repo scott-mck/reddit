@@ -8,6 +8,6 @@ sponsoredPosts.fetch({
       collection: sponsoredPosts.first(10),
       model: sponsoredPosts.first()
     });
-    $('#sponsored').append(view.render().$el.addClass('sponsored'));
+    $('#sponsored').append(view.render().$el);
   }
 });
