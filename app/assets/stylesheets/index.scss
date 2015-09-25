@@ -25,10 +25,11 @@
 
   .votes {
     float: left;
+    margin-left: 10px;
+    margin-right: 10px;
     font-weight: bold;
     font-size: small;
     color: #c6c6c6;
-    width: 50px;
     text-align: center;
 
     img.arrow {
