@@ -15,7 +15,7 @@
 
   <% if ['controversial', 'top'].include? params[:sort] %>
     <%= stylesheet_link_tag    'time_list', media: 'all' %>
-    <%= javascript_include_tag 'time_list'  %>
+    <%= javascript_include_tag 'optional/time_list'  %>
   <% end %>
 
   <%= csrf_meta_tags %>

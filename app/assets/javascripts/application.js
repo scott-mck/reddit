@@ -12,8 +12,6 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-//= require sponsored
-//= require get_ad
 
 function disableScroll () {
   $('body').css('position', 'fixed');
