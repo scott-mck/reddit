@@ -5,7 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'  %>
 
-  <% if ['/hot', '/'].include? request.env['PATH_INFO'] %>
+  <%= stylesheet_link_tag params[:action], media: 'all' %>
+  <%= javascript_include_tag params[:action] %>
+
+  <% if params[:subreddit].nil? %>
     <%= stylesheet_link_tag    'trending', media: 'all' %>
     <%= javascript_include_tag 'trending'  %>
   <% end %>
@@ -14,6 +17,7 @@
     <%= stylesheet_link_tag    'time_list', media: 'all' %>
     <%= javascript_include_tag 'time_list'  %>
   <% end %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>

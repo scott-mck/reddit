@@ -3,6 +3,7 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += [
+  'index/index.js', 'index/index.css',
   'trending.js', 'trending.css',
   'time_list.js', 'time_list.css'
 ]
