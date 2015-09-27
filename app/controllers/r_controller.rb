@@ -9,4 +9,8 @@ class RController < ApplicationController
     @subreddit = params[:subreddit] ? "/r/#{params[:subreddit]}/" : "/"
     @sort = params[:sort]
   end
+
+  def show
+    
+  end
 end
