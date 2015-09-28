@@ -8,14 +8,13 @@ comments.fetch({
   dataType: 'jsonp',
   jsonp: 'jsonp',
   success: function (collection, resp) {
-    debugger
-    var selectedPost;
-    // comments.each(function (post) {
-    //    view = new Reddit.Views.PostsIndexItem({
-    //     model: post,
-    //     index: getIndex(comments.indexOf(post))
-    //   });
-    //   $('#comments').append(view.render().$el);
-    // });
+    var selectedPostData = resp[0].data.children[0];
+    var postModel = new Reddit.Models.Post(selectedPostData);
+
+    var view = new Reddit.Views.PostsIndexItem({
+      model: postModel
+    });
+
+    $('#post').append(view.render().$el);
   }
 });
