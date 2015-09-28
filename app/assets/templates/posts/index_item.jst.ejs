@@ -55,7 +55,7 @@
     <% if (nsfw) { %>
       <span class="nsfw">NSFW</span>
     <% } %>
-    <a href="https://www.reddit.com/<%= post.get('data').permalink %>">
+    <a href="<%= permalink %>">
       <% if (numComments === 0) { %>
         <span>comment</a></span>
       <% } else if (numComments === 1) { %>
