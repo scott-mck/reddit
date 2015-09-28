@@ -5,8 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'  %>
 
-  <%= stylesheet_link_tag params[:action], media: 'all' %>
-  <%= javascript_include_tag params[:action] %>
+  <%= stylesheet_link_tag "#{params[:action]}/main", media: 'all' %>
+  <%= javascript_include_tag "#{params[:action]}/main" %>
 
   <% if params[:subreddit].nil? %>
     <%= stylesheet_link_tag    'trending', media: 'all' %>
