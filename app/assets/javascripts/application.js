@@ -101,6 +101,7 @@ $(document).ready(function() {
     });
   });
 
+  // TODO: Do this when trying to upvote
   $('a.login, .submit-post').click(showLoginModal);
 
   $('form.search').submit(function (event) {
