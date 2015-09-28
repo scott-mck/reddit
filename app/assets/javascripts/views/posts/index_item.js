@@ -78,6 +78,7 @@ Reddit.Views.PostsIndexItem = Backbone.View.extend({
       embedClass: this.embedClass,
       index: this.index,
       numComments: this.model.get('data').num_comments,
+      permalink: this.model.get('data').permalink,
       nsfw: this.model.get('data').over_18
     });
     this.$el.html(content);
