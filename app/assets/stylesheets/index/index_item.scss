@@ -5,7 +5,7 @@
   .rank {
     float: left;
     margin-top: 14px;
-    margin-left: 16px;
+    min-width: 30px;
     font-family: arial;
     text-align: right;
     color: #c6c6c6;
@@ -13,8 +13,7 @@
 
   .votes {
     float: left;
-    margin-left: 10px;
-    margin-right: 10px;
+    min-width: 50px;
     font-weight: bold;
     font-size: small;
     color: #c6c6c6;
