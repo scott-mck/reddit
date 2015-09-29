@@ -1,1 +1,61 @@
 //= require ../index/index_item
+
+.title {
+  font-size: 16px;
+  border-bottom: 1px dotted black;
+  overflow: auto;
+  padding-bottom: 3px;
+}
+
+.comments-index-item {
+  .votes {
+    float: left;
+    margin-right: 3px;
+
+    img {
+      margin-top: 2px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  span.hide-comment {
+    margin-left: 2px;
+    color: #369;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  a {
+    font-weight: bold;
+    color: #369;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  span.detail {
+    margin-left: 8px;
+    color: #888;
+  }
+
+  .comment-content {
+    overflow: auto;
+  }
+
+  .body {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  a.gray {
+    margin-left: 1px;
+    color: #888;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
