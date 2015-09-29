@@ -11,10 +11,15 @@ comments.fetch({
     var selectedPostData = resp[0].data.children[0];
     var postModel = new Reddit.Models.Post(selectedPostData);
 
-    var view = new Reddit.Views.PostsIndexItem({
+    var selectedPost = new Reddit.Views.PostsIndexItem({
       model: postModel
     });
+    $('#post').append(selectedPost.render().$el);
 
-    $('#post').append(view.render().$el);
+    var comment = new Reddit.Models.Comment(resp[1].data.children[0]);
+    var view = new Reddit.Views.CommentsIndexItem({
+      model: comment
+    });
+    $('#comments').append(view.render().$el);
   }
 });
