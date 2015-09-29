@@ -8,6 +8,8 @@
 }
 
 .comments-index-item {
+  margin-top: 10px;
+
   .votes {
     float: left;
     margin-right: 3px;
@@ -57,5 +59,11 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .replies {
+    margin-left: 20px;
+    margin-top: 8px;
+    border-left: 1px dotted #DDF;
   }
 }
