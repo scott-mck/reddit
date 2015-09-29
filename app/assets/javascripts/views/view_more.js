@@ -18,7 +18,6 @@ Reddit.Views.ViewMore = Backbone.View.extend({
       dataType: 'jsonp',
       jsonp: 'jsonp',
       success: function (resp, status, json) {
-        debugger
         var subreddit = json.responseJSON.data.children[0].data.subreddit;
         window.location = '/r/' + subreddit;
       }
