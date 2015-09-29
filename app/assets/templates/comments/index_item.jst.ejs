@@ -6,7 +6,7 @@
 
 <span class="hide-comment">[–]</span>
 
-<a href="https://reddit.com/u/<%= author %>">
+<a class="author" href="https://reddit.com/u/<%= author %>">
   <%= author %>
 </a>
 
@@ -15,7 +15,7 @@
 
 <div class="comment-content">
   <div class="body">
-    <p><%= body %></p>
+    <%= body %>
   </div>
 
   <a class="gray" href="<%= this.model.get('data').permalink %>">permalink</a>

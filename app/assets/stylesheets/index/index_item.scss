@@ -58,7 +58,7 @@
   }
 
   .post-content {
-    overflow: auto;
+    overflow: hidden;
   }
 
   a.post-title {
@@ -125,7 +125,7 @@
   }
 
   .embed-content.description {
-    overflow: auto;
+    overflow: hidden;
     margin-top: 10px;
     padding: 5px 10px 0px 10px;
     width: 864px;
