@@ -16,10 +16,12 @@ comments.fetch({
     });
     $('#post').append(selectedPost.render().$el);
 
-    var comment = new Reddit.Models.Comment(resp[1].data.children[0]);
-    var view = new Reddit.Views.CommentsIndexItem({
-      model: comment
+    resp[1].data.children.forEach(function (commentData) {
+      var comment = new Reddit.Models.Comment(commentData);
+      var view = new Reddit.Views.CommentsIndexItem({
+        model: comment
+      });
+      $('#comments').append(view.render().$el);
     });
-    $('#comments').append(view.render().$el);
   }
 });
