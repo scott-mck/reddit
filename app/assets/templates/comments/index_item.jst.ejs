@@ -1,0 +1,22 @@
+<div class="votes">
+  <img src="https://www.reddit.com/static/aupgray.gif">
+  <br>
+  <img src="http://i.weirdnutdaily.com/images/downvote.gif">
+</div>
+
+<span class="hide-comment">[–]</span>
+
+<a href="https://reddit.com/u/<%= author %>">
+  <%= author %>
+</a>
+
+<span class="detail"><%= score %> points</span>
+<span class="detail"><%= $.timeago(this.model.get('data').created_utc * 1000) %></span>
+
+<div class="comment-content">
+  <div class="body">
+    <p><%= body %></p>
+  </div>
+
+  <a class="gray" href="<%= this.model.get('data').permalink %>">permalink</a>
+</div>
