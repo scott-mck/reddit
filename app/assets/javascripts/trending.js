@@ -12,6 +12,6 @@ $.ajax({
       numComments: trendingPost.num_comments,
       permalink: trendingPost.permalink
     });
-    $('#sponsored').after(view.render().$el);
+    $('#sponsored-outer').after(view.render().$el);
   }
 });
