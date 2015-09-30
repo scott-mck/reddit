@@ -11,15 +11,6 @@
   margin-top: 7px;
 }
 
-#post {
-  overflow: hidden;
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-}
-
 #content {
   margin-left: 15px;
 }
