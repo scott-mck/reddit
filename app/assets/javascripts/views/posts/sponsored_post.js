@@ -20,9 +20,9 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
     }
 
     window.hideWhatsThisId = setTimeout(function () {
-      this.$('.whats-this-description').css('visibility', 'hidden');
-      this.$('.whats-this-description').css('opacity', 0);
-      this.$('.whats-this-description').css('bottom', '-54px');
+      $('.whats-this-description').css('visibility', 'hidden');
+      $('.whats-this-description').css('opacity', 0);
+      $('.whats-this-description').css('bottom', '-54px');
     }, 800);
   },
 
@@ -60,9 +60,9 @@ Reddit.Views.SponsoredPost = Backbone.View.extend({
     }
 
     window.showWhatsThisId = setTimeout(function () {
-      this.$('.whats-this-description').css('visibility', 'visible');
-      this.$('.whats-this-description').css('opacity', 1);
-      this.$('.whats-this-description').css('bottom', '-59px');
+      $('.whats-this-description').css('visibility', 'visible');
+      $('.whats-this-description').css('opacity', 1);
+      $('.whats-this-description').css('bottom', '-59px');
     }, 200);
   },
 
