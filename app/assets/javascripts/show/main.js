@@ -19,7 +19,8 @@ comments.fetch({
     resp[1].data.children.forEach(function (commentData) {
       var comment = new Reddit.Models.Comment(commentData);
       var view = new Reddit.Views.CommentsIndexItem({
-        model: comment
+        model: comment,
+        index: 0
       });
       $('#comments').append(view.render().$el);
     });
