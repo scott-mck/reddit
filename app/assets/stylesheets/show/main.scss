@@ -1,5 +1,9 @@
 //= require ../index/index_item
 
+#comments {
+  margin-left: 5px;
+}
+
 #post {
   overflow: hidden;
   &:after {
@@ -10,14 +14,20 @@
 }
 
 .title {
+  margin-left: 15px;
   font-size: 16px;
   border-bottom: 1px dotted black;
   overflow: hidden;
   padding-bottom: 3px;
 }
 
+.load-more.comments-index-item {
+  margin-left: 3px;
+}
+
 .comments-index-item {
   margin-top: 10px;
+  margin-left: 10px;
 
   .votes {
     float: left;
@@ -50,6 +60,7 @@
   }
 
   span.detail {
+    font-weight: normal;
     color: #888;
   }
 
@@ -58,13 +69,32 @@
   }
 
   .body {
-    font-size: 14px;
     margin-top: 6px;
+    width: 840px;
+    font-size: 14px;
 
     a:hover {
       text-decoration: none;
       color: #337ab7;
     }
+  }
+
+  a.more {
+    font-weight: bold;
+    color: #369;
+  }
+
+  a.continue {
+    font-size: 10px;
+    color: #369;
+  }
+
+  .continue-thread {
+    display: inline-block;
+    width: 25px;
+    height: 9px;
+    background-image: url('https://www.reddit.com/static/sprite-reddit.hV9obzo72Pc.png');
+    background-position: -50px 20px;
   }
 
   a.gray {
@@ -79,7 +109,6 @@
   .replies {
     margin-left: 15px;
     margin-top: 8px;
-    padding-left: 10px;
     border-left: 1px dotted #DDF;
   }
 }

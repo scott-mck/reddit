@@ -1,0 +1,14 @@
+<% if (continueThread) { %>
+  <a class="continue" href="#">continue this thread</a>
+  <div class="continue-thread"></div>
+<% } else { %>
+  <a class="more" href="#">load more comments
+    <span class="detail">
+      <% if (count === 1) { %>
+        (<%= count %> reply)
+      <% } else { %>
+        (<%= count %> replies)
+      <% } %>
+    </span>
+  </a>
+<% } %>
