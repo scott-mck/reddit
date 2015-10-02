@@ -35,6 +35,7 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
       body: _.unescape(this.model.get('data').body_html),
       score: this.model.get('data').score,
       name: this.model.get('data').name,
+      permalink: this.model.get('data').id,
       showMore: this.showMore
     });
     this.$el.html(content);
