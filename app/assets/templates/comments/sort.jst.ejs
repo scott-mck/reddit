@@ -1,0 +1,8 @@
+<div class="title">
+  top <%= showComments %> comments
+  <% if (numComments > 500 && showLink) { %>
+    <a href="<%= window.location.pathname %>?limit=500">
+      show 500
+    </a>
+  <% } %>
+</div>

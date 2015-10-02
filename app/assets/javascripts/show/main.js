@@ -4,7 +4,8 @@ var comments = new Reddit.Collections.Comments();
 comments.fetch({
   url: 'https://www.reddit.com'
         + window.location.pathname
-        + '.json',
+        + '.json'
+        + window.location.search,
   dataType: 'jsonp',
   jsonp: 'jsonp',
   success: function (collection, resp) {
@@ -15,6 +16,11 @@ comments.fetch({
       model: postModel
     });
     $('#post').append(selectedPost.render().$el);
+
+    var commentsSort = new Reddit.Views.CommentsSort({
+      numComments: _.last(resp[1].data.children).data.count
+    });
+    $('#comments-sort').append(commentsSort.render().$el);
 
     resp[1].data.children.forEach(function (commentData) {
       var comment = new Reddit.Models.Comment(commentData);
