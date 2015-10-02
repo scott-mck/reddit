@@ -14,11 +14,20 @@
 }
 
 .title {
+  margin-top: 10px;
   margin-left: 15px;
   font-size: 16px;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted gray;
   overflow: hidden;
   padding-bottom: 3px;
+
+  a {
+    font-size: 12px;
+    color: #369;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .load-more.comments-index-item {
