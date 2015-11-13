@@ -36,13 +36,14 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
 
   hideComment: function () {
     this.$('.hide-votes').css('display', 'none');
-    var hideEls = this.$('.hideable');
-    hideEls.css('display', 'none');
+    this.$('.hideable').css('display', 'none');
+
     this.$('.turn-gray').addClass('gray');
     this.$('.turn-italic').css('font-style', 'italic');
 
-    var children = $('<span class="children">')
-    children.append('(' + hideEls.length + ' children)');
+    var length = $('.comments-index-item').length;
+    var children = $('<span class="children">');
+    children.append('(' + length + ' children)');
     this.$('.detail').append(children);
 
     this.$('.hide-comment').text('[+]');
