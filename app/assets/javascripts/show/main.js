@@ -26,8 +26,7 @@ comments.fetch({
       var comment = new Reddit.Models.Comment(commentData);
       var view = new Reddit.Views.CommentsIndexItem({
         op: postModel.get('data').author,
-        model: comment,
-        index: 0
+        model: comment
       });
       $('#comments').append(view.render().$el);
     });
