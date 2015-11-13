@@ -4,6 +4,8 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.index = options.index;
+    this.op = options.op;
+    this.authorIsOp = this.model.get('data').author === options.op;
   },
 
   addReplies: function () {
@@ -19,6 +21,7 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
         } else if (replyData.kind === "t1") {
           var reply = new Reddit.Models.Comment(replyData);
           var commentView = new Reddit.Views.CommentsIndexItem({
+            op: this.op,
             model: reply,
             index: this.index + 1
           });
@@ -31,6 +34,7 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
 
   render: function () {
     var content = this.template({
+      authorIsOp: this.authorIsOp,
       author: this.model.get('data').author,
       body: _.unescape(this.model.get('data').body_html),
       score: this.model.get('data').score,

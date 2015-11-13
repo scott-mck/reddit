@@ -25,6 +25,7 @@ comments.fetch({
     resp[1].data.children.forEach(function (commentData) {
       var comment = new Reddit.Models.Comment(commentData);
       var view = new Reddit.Views.CommentsIndexItem({
+        op: postModel.get('data').author,
         model: comment,
         index: 0
       });
