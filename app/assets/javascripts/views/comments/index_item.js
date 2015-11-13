@@ -2,7 +2,8 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
   template: JST['comments/index_item'],
   className: 'comments-index-item',
   events: {
-    'click .hide-comment': 'hideComment'
+    'click .hide-comment': 'hideComment',
+    'click .show-comment': 'showComment'
   },
 
   initialize: function (options) {
@@ -37,10 +38,12 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
     this.$('.hide-votes').css('display', 'none');
     var hideEls = this.$('.hideable');
     hideEls.css('display', 'none');
-    this.$('.turn-gray').css('color', 'gray');
+    this.$('.turn-gray').addClass('gray');
     this.$('.turn-italic').css('font-style', 'italic');
 
-    this.$('.detail').append('(' + hideEls.length + ' children)');
+    var children = $('<span class="children">')
+    children.append('(' + hideEls.length + ' children)');
+    this.$('.detail').append(children);
 
     this.$('.hide-comment').text('[+]');
     this.$('.hide-comment').removeClass('hide-comment').addClass('show-comment');
@@ -60,5 +63,18 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
 
     this.addReplies();
     return this;
+  },
+
+  showComment: function () {
+    this.$('.hide-votes').css('display', 'block');
+    this.$('.hideable').css('display', 'block');
+
+    this.$('.turn-gray').removeClass('gray');
+    this.$('.turn-italic').css('font-style', 'normal');
+
+    this.$('.detail span.children').remove();
+
+    this.$('.show-comment').text('[-]');
+    this.$('.show-comment').removeClass('show-comment').addClass('hide-comment');
   }
 });
