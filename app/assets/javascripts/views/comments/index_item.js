@@ -6,7 +6,6 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.index = options.index;
     this.op = options.op;
     this.authorIsOp = this.model.get('data').author === options.op;
   },
@@ -17,7 +16,6 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
       this.model.get('data').replies.data.children.forEach(function (replyData) {
         if (replyData.kind === "more") {
           var loadMore = new Reddit.Views.LoadMore({
-            index: this.index + 1,
             count: replyData.data.count
           });
           this.addSubview('.' + this.model.get('data').name, loadMore);
@@ -26,7 +24,7 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
           var commentView = new Reddit.Views.CommentsIndexItem({
             op: this.op,
             model: reply,
-            index: this.index + 1
+            parent: this
           });
           this.addSubview('.' + this.model.get('data').name, commentView);
         }
@@ -36,10 +34,16 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
   },
 
   hideComment: function () {
-    this.$('.hideable').css('display', 'none');
+    this.$('.hide-votes').css('display', 'none');
+    var hideEls = this.$('.hideable');
+    hideEls.css('display', 'none');
     this.$('.turn-gray').css('color', 'gray');
     this.$('.turn-italic').css('font-style', 'italic');
+
+    this.$('.detail').append('(' + hideEls.length + ' children)');
+
     this.$('.hide-comment').text('[+]');
+    this.$('.hide-comment').removeClass('hide-comment').addClass('show-comment');
   },
 
   render: function () {
