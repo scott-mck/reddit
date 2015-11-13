@@ -1,27 +1,33 @@
-<div class="votes">
-  <img src="https://www.reddit.com/static/aupgray.gif">
-  <br>
-  <img src="http://i.weirdnutdaily.com/images/downvote.gif">
+<div class="spacer">
+  <div class="votes hideable">
+    <img src="https://www.reddit.com/static/aupgray.gif">
+    <br>
+    <img src="http://i.weirdnutdaily.com/images/downvote.gif">
+  </div>
 </div>
-
-<span class="hide-comment">[–]</span>
-
-<a class="<%= authorIsOp ? 'author op' : 'author' %>"
-   href="https://reddit.com/u/<%= author %>">
-  <%= author %>
-</a>
-
-<span class="detail"><%= score %> points</span>
-<span class="detail">
-  <%= $.timeago(this.model.get('data').created_utc * 1000) %>
-</span>
 
 <div class="comment-content">
-  <div class="body">
-    <%= body %>
+  <span class="hide-comment turn-gray">[–]</span>
+
+  <a class=
+     "<%= authorIsOp ? 'author op' : 'author' %>
+     turn-gray turn-italic"
+     href="https://reddit.com/u/<%= author %>">
+    <%= author %>
+  </a>
+
+  <span class="detail turn-gray turn-italic">
+    <%= score %> points
+    <%= $.timeago(this.model.get('data').created_utc * 1000) %>
+  </span>
+
+  <div class="hideable">
+    <div class="body">
+      <%= body %>
+    </div>
+
+    <a class="gray" href="<%= permalink %>">permalink</a>
+
+    <div class="<%= name %> replies"></div>
   </div>
-
-  <a class="gray" href="<%= permalink %>">permalink</a>
 </div>
-
-<div class="<%= name %> replies"></div>

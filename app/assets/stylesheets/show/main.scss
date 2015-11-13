@@ -38,9 +38,14 @@
   margin-top: 10px;
   margin-left: 10px;
 
+  .spacer {
+    float: left;
+    min-width: 21px;
+    height: 10px;
+  }
+
   .votes {
     float: left;
-    margin-right: 3px;
 
     img {
       margin-top: 2px;

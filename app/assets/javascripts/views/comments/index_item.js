@@ -1,6 +1,9 @@
 Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
   template: JST['comments/index_item'],
   className: 'comments-index-item',
+  events: {
+    'click .hide-comment': 'hideComment'
+  },
 
   initialize: function (options) {
     this.index = options.index;
@@ -30,6 +33,13 @@ Reddit.Views.CommentsIndexItem = Backbone.CompositeView.extend({
       }.bind(this));
 
     }
+  },
+
+  hideComment: function () {
+    this.$('.hideable').css('display', 'none');
+    this.$('.turn-gray').css('color', 'gray');
+    this.$('.turn-italic').css('font-style', 'italic');
+    this.$('.hide-comment').text('[+]');
   },
 
   render: function () {
