@@ -9,6 +9,7 @@
 
   form.search {
     position: relative;
+    z-index: 10;
 
     input.text-field {
       padding-left: 9px;
@@ -37,7 +38,7 @@
       border: none;
       background-color: white;
       background-image: url('http://www.redditstatic.com/sprite-reddit.png');
-      background-position: -61px 37px;
+      background-position: -69px 37px;
 
       &:hover {
         cursor: pointer;
