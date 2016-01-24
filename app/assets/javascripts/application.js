@@ -102,7 +102,11 @@ $(document).ready(function() {
   });
 
   // TODO: Do this when trying to upvote
-  $('a.login, .submit-post').click(showLoginModal);
+  $(window).click(function (event) {
+    if ($(event.target).hasClass('needs-login')) {
+      showLoginModal();
+    }
+  });
 
   $('form.search').submit(function (event) {
     event.preventDefault();
